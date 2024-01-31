@@ -1,0 +1,44 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+trigger: none
+pr: none
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    sudo apt-get update
+    sudo wget -O /usr/src/google-chrome-stable_current_amd64.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+    sudo dpkg -i /usr/src/google-chrome-stable_current_amd64.deb ;
+    sudo apt-get install -f -y
+    sudo rm -f /usr/src/google-chrome-stable_current_amd64.deb
+  displayName: 'Install Chrome'
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: AZD-RWD-DEV1
+    scriptType: bash
+    scriptLocation: inlineScript 
+    inlineScript: |
+      npm install
+      npx wdio ./config/wdio.azure.$(environment).conf.ts --suite $(suite) -secrets $(keyVaultUrlDev)
+  displayName: 'npm install and run tests'
+
+- task: PublishCucumberReport@1
+  inputs:
+    jsonDir: '$(System.DefaultWorkingDirectory)/report'
+    outputPath: '$(System.DefaultWorkingDirectory)/report'
+    theme: 'bootstrap'
+    reportSuiteAsScenarios: true
+    name: $(Build.BuildNumber)
+    title: $(Build.DefinitionName)
+  displayName: Publish report
+  condition: always()

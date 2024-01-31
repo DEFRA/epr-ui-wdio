@@ -1,0 +1,15 @@
+export type DelegatedUserQuestions =
+  | "Account permissions"
+  | "Caniatadau’r cyfrif"
+  | "How they work with your organisation"
+  | "Sut maen nhw’n gweithio gyda’ch sefydliad"
+  | "Name of compliance scheme"
+  | "Enw’r cynllun cydymffurfio"
+  | "Job title"
+  | "Teitl swydd"
+  | "Name of consultancy"
+  | "Enw’r ymgynghoriaeth"
+  | "Name of organisation"
+  | "Enw’r sefydliad"
+  | "Email"
+  | "User type";

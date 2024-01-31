@@ -1,0 +1,170 @@
+organisation_id,subsidiary_id,organisation_size,submission_period,packaging_activity,packaging_type,packaging_class,packaging_material,packaging_material_subtype,from_country,to_country,packaging_material_weight,packaging_material_units,Row Number,Issue,Message
+org_id_placeholder,123ABC456XYZ,L,2023-P2,SO,PB,B1,AL,,,,100,,2,Error,Submission period must be the same for all of this organisation's packaging data
+org_id_placeholder,12,L,2023-P2,Pf,HDC,,AL,,,,101,101,3,Error,"When packaging activity is entered, it must be one of the codes SO, PF, IM, SE, HL or OM"
+org_id_placeholder,12,L,2023-P2,PF,HDc,,AL,,,,101,101,4,Error,"Packaging type must be one of the codes HH, NH, CW, OW, PB, RU, HDC, NDC or SP"
+org_id_placeholder,A,L,2023-P2,SO,HH,p1,AL,,,,101,,5,Error,"When packaging class is entered, it must be one of the codes P1, P2, P3, P4, P5, P6, O1, O2 or B1"
+org_id_placeholder,A,L,2023-P2,SO,HH,P1,Al,,,,101,,6,Error,"Packaging material must be one of the codes AL, FC, GL, PC, PL, ST, WD or OT"
+org_id_placeholder,ABC123,L,2023-P2,,OW,O2,PL,,En,,101,,7,Error,"When packaging type is self-managed waste (CW or OW), from country must be one of England (EN), Northern Ireland (NI), Scotland (SC) or Wales (WS)"
+org_id_placeholder,ABC123,L,2023-P2,,OW,O2,PL,,NI,En,101,,9,Error,"When packaging type is self-managed waste (CW or OW), and you send it to another country, the to country must be one of England (EN), Northern Ireland (NI), Scotland (SC) or Wales (WS)"
+org_id_placeholder,12,L,2023-P2,PF,HDC,,AL,,,,100.5,101,10,Error,"Packaging material weight must be a whole number in kilograms. For example, 50000. Do not include the words 'kilograms' or 'kgs'."
+org_id_placeholder,12,L,2023-P2,PF,HDC,,AL,,,,100,100.5,11,Error,Packaging material units must be a whole number
+org_id_placeholder,12,L,2023-P2,,OW,O2,PL,,EN,EN,101,,13,Error,Cannot be going from and to the same country in the UK
+org_id_placeholder,12,L,2023-P2,,CW,O1,PL,,NI,NI,101,,15,Error,Cannot be going from and to the same country in the UK
+org_id_placeholder,ABC123,L,2023-P2,SO,HH,P1,GL,,,NI,101,,16,Error,To country is not needed for this packaging type
+org_id_placeholder,ABC123,L,2023-P2,SO,NH,P2,GL,,,SC,101,,17,Error,To country is not needed for this packaging type
+org_id_placeholder,ABC123,L,2023-P2,SO,PB,B1,GL,,,EN,101,,18,Error,To country is not needed for this packaging type
+org_id_placeholder,ABC123,L,2023-P2,SO,HDC,,GL,,,NI,101,101,19,Error,To country is not needed for this packaging type
+org_id_placeholder,ABC123,L,2023-P2,SO,NDC,,GL,,,NI,101,101,20,Error,To country is not needed for this packaging type
+org_id_placeholder,ABC123,L,2023-P2,SO,RU,P1,GL,,,SC,101,,21,Error,To country is not needed for this packaging type
+org_id_placeholder,ABC123,L,2023-P2,SO,NDC,,GL,,EN,,101,101,22,Error,From country is not needed for this packaging type
+org_id_placeholder,ABC123,L,2023-P2,SO,HH,P1,GL,,NI,,101,,23,Error,From country is not needed for this packaging type
+org_id_placeholder,ABC123,L,2023-P2,SO,NH,P2,GL,,SC,,101,,24,Error,From country is not needed for this packaging type
+org_id_placeholder,ABC123,L,2023-P2,SO,PB,B1,GL,,EN,,101,,25,Error,From country is not needed for this packaging type
+org_id_placeholder,ABC123,L,2023-P2,SO,HDC,,GL,,NI,,101,101,26,Error,From country is not needed for this packaging type
+org_id_placeholder,ABC123,L,2023-P2,SO,RU,P1,GL,,SC,,101,,27,Error,From country is not needed for this packaging type
+org_id_placeholder,XYZ123ABC,L,2023-P2,OM,HDC,,GL,,,,101,101,28,Error,"For large organisations (L), when packaging activity is supplied through an online marketplace that you own (OM), packaging type must be household packaging (HH) or non-household packaging (NH)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,HH,P1,GL,,,,101,,29,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is household packaging (HH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,HH,P2,GL,,,,101,,30,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is household packaging (HH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,HH,P3,GL,,,,101,,31,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is household packaging (HH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,HH,P4,GL,,,,101,,32,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is household packaging (HH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,HH,P5,GL,,,,101,,33,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is household packaging (HH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,HH,O1,GL,,,,101,,34,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is household packaging (HH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,HH,O2,GL,,,,101,,35,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is household packaging (HH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,HH,B1,GL,,,,101,,36,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is household packaging (HH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,HH,,GL,,,,101,,37,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is household packaging (HH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,NH,P1,GL,,,,101,,38,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is non-household packaging (NH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,NH,P2,GL,,,,101,,39,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is non-household packaging (NH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,NH,P3,GL,,,,101,,40,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is non-household packaging (NH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,NH,P4,GL,,,,101,,41,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is non-household packaging (NH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,NH,P5,GL,,,,101,,42,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is non-household packaging (NH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,NH,O1,GL,,,,101,,43,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is non-household packaging (NH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,NH,O2,GL,,,,101,,44,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is non-household packaging (NH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,NH,B1,GL,,,,101,,45,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is non-household packaging (NH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,OM,NH,,GL,,,,101,,46,Error,"When packaging activity is supplied through an online marketplace that you own (OM), and packaging type is non-household packaging (NH), packaging class must be online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,SO,NH,P5,GL,,,,101,,47,Error,"When packaging type is non-household waste (NH), packaging class must be one of the codes P1, P2, P3 or P4"
+org_id_placeholder,ABC123456,L,2023-P2,PF,NH,P6,GL,,,,101,,48,Error,"When packaging type is non-household waste (NH), packaging class must be one of the codes P1, P2, P3 or P4"
+org_id_placeholder,ABC123456,L,2023-P2,IM,NH,O1,GL,,,,101,,49,Error,"When packaging type is non-household waste (NH), packaging class must be one of the codes P1, P2, P3 or P4"
+org_id_placeholder,ABC123456,L,2023-P2,SE,NH,O2,GL,,,,101,,50,Error,"When packaging type is non-household waste (NH), packaging class must be one of the codes P1, P2, P3 or P4"
+org_id_placeholder,ABC123456,L,2023-P2,SO,NH,B1,GL,,,,101,,51,Error,"When packaging type is non-household waste (NH), packaging class must be one of the codes P1, P2, P3 or P4"
+org_id_placeholder,ABC123456,L,2023-P2,SE,NH,,GL,,,,101,,52,Error,"When packaging type is non-household waste (NH), packaging class must be one of the codes P1, P2, P3 or P4"
+org_id_placeholder,ABC123456,L,2023-P2,,CW,P1,PL,,EN,,101,,53,Error,Packaging type is self-managed consumer waste (CW) so packaging class can only be self-managed consumer waste - all (O1)
+org_id_placeholder,ABC123456,L,2023-P2,,CW,P2,PL,,EN,,101,,54,Error,Packaging type is self-managed consumer waste (CW) so packaging class can only be self-managed consumer waste - all (O1)
+org_id_placeholder,ABC123456,L,2023-P2,,CW,P3,PL,,EN,,101,,55,Error,Packaging type is self-managed consumer waste (CW) so packaging class can only be self-managed consumer waste - all (O1)
+org_id_placeholder,ABC123456,L,2023-P2,,CW,P4,PL,,EN,,101,,56,Error,Packaging type is self-managed consumer waste (CW) so packaging class can only be self-managed consumer waste - all (O1)
+org_id_placeholder,ABC123456,L,2023-P2,,CW,P5,PL,,EN,,101,,57,Error,Packaging type is self-managed consumer waste (CW) so packaging class can only be self-managed consumer waste - all (O1)
+org_id_placeholder,ABC123456,L,2023-P2,,CW,P6,PL,,EN,,101,,58,Error,Packaging type is self-managed consumer waste (CW) so packaging class can only be self-managed consumer waste - all (O1)
+org_id_placeholder,ABC123456,L,2023-P2,,CW,O2,PL,,EN,,101,,59,Error,Packaging type is self-managed consumer waste (CW) so packaging class can only be self-managed consumer waste - all (O1)
+org_id_placeholder,ABC123456,L,2023-P2,,CW,B1,PL,,EN,,101,,60,Error,Packaging type is self-managed consumer waste (CW) so packaging class can only be self-managed consumer waste - all (O1)
+org_id_placeholder,ABC123456,L,2023-P2,,CW,,PL,,EN,,101,,61,Error,Packaging type is self-managed consumer waste (CW) so packaging class can only be self-managed consumer waste - all (O1)
+org_id_placeholder,ABC123456,L,2023-P2,,OW,P1,GL,,EN,,101,,62,Error,Packaging type is self-managed organisation waste (OW) so packaging class can only be organisation waste - origin (O2)
+org_id_placeholder,ABC123456,L,2023-P2,,OW,P2,GL,,EN,,101,,63,Error,Packaging type is self-managed organisation waste (OW) so packaging class can only be organisation waste - origin (O2)
+org_id_placeholder,ABC123456,L,2023-P2,,OW,P3,GL,,EN,,101,,64,Error,Packaging type is self-managed organisation waste (OW) so packaging class can only be organisation waste - origin (O2)
+org_id_placeholder,ABC123456,L,2023-P2,,OW,P4,GL,,EN,,101,,65,Error,Packaging type is self-managed organisation waste (OW) so packaging class can only be organisation waste - origin (O2)
+org_id_placeholder,ABC123456,L,2023-P2,,OW,P5,GL,,EN,,101,,66,Error,Packaging type is self-managed organisation waste (OW) so packaging class can only be organisation waste - origin (O2)
+org_id_placeholder,ABC123456,L,2023-P2,,OW,P6,GL,,EN,,101,,67,Error,Packaging type is self-managed organisation waste (OW) so packaging class can only be organisation waste - origin (O2)
+org_id_placeholder,ABC123456,L,2023-P2,,OW,O1,GL,,EN,,101,,68,Error,Packaging type is self-managed organisation waste (OW) so packaging class can only be organisation waste - origin (O2)
+org_id_placeholder,ABC123456,L,2023-P2,,OW,B1,GL,,EN,,101,,69,Error,Packaging type is self-managed organisation waste (OW) so packaging class can only be organisation waste - origin (O2)
+org_id_placeholder,ABC123456,L,2023-P2,,OW,,GL,,EN,,101,,70,Error,Packaging type is self-managed organisation waste (OW) so packaging class can only be organisation waste - origin (O2)
+org_id_placeholder,ABC123456,L,2023-P2,SO,HH,P2,GL,,,,101,,71,Error,"Packaging type is household packaging (HH) so packaging class can only be one of primary packaging (P1), shipment packaging (P3) or online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,PF,HH,P4,GL,,,,101,,72,Error,"Packaging type is household packaging (HH) so packaging class can only be one of primary packaging (P1), shipment packaging (P3) or online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,IM,HH,P5,GL,,,,101,,73,Error,"Packaging type is household packaging (HH) so packaging class can only be one of primary packaging (P1), shipment packaging (P3) or online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,SE,HH,P6,GL,,,,101,,74,Error,"Packaging type is household packaging (HH) so packaging class can only be one of primary packaging (P1), shipment packaging (P3) or online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,HL,HH,O1,GL,,,,101,,75,Error,"Packaging type is household packaging (HH) so packaging class can only be one of primary packaging (P1), shipment packaging (P3) or online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,HL,HH,O2,GL,,,,101,,76,Error,"Packaging type is household packaging (HH) so packaging class can only be one of primary packaging (P1), shipment packaging (P3) or online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,IM,HH,B1,GL,,,,101,,77,Error,"Packaging type is household packaging (HH) so packaging class can only be one of primary packaging (P1), shipment packaging (P3) or online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,SO,HH,,GL,,,,101,,78,Error,"Packaging type is household packaging (HH) so packaging class can only be one of primary packaging (P1), shipment packaging (P3) or online marketplace total (P6)"
+org_id_placeholder,ABC123456,L,2023-P2,SO,PB,P1,GL,,,,101,,79,Error,Packaging type is commonly ends up in public bins (PB) so packaging class can only be public bin (B1)
+org_id_placeholder,ABC123456,L,2023-P2,SO,PB,P2,GL,,,,101,,80,Error,Packaging type is commonly ends up in public bins (PB) so packaging class can only be public bin (B1)
+org_id_placeholder,ABC123456,L,2023-P2,SO,PB,P3,GL,,,,101,,81,Error,Packaging type is commonly ends up in public bins (PB) so packaging class can only be public bin (B1)
+org_id_placeholder,ABC123456,L,2023-P2,SO,PB,P4,GL,,,,101,,82,Error,Packaging type is commonly ends up in public bins (PB) so packaging class can only be public bin (B1)
+org_id_placeholder,ABC123456,L,2023-P2,SO,PB,P5,GL,,,,101,,83,Error,Packaging type is commonly ends up in public bins (PB) so packaging class can only be public bin (B1)
+org_id_placeholder,ABC123456,L,2023-P2,SO,PB,P6,GL,,,,101,,84,Error,Packaging type is commonly ends up in public bins (PB) so packaging class can only be public bin (B1)
+org_id_placeholder,ABC123456,L,2023-P2,SO,PB,O1,GL,,,,101,,85,Error,Packaging type is commonly ends up in public bins (PB) so packaging class can only be public bin (B1)
+org_id_placeholder,ABC123456,L,2023-P2,SO,PB,O2,GL,,,,101,,86,Error,Packaging type is commonly ends up in public bins (PB) so packaging class can only be public bin (B1)
+org_id_placeholder,ABC123456,L,2023-P2,SO,PB,,GL,,,,101,,87,Error,Packaging type is commonly ends up in public bins (PB) so packaging class can only be public bin (B1)
+org_id_placeholder,ABC123456,L,2023-P2,SO,HDC,P1,GL,,,,101,101,88,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,ABC123456,L,2023-P2,SO,HDC,P2,GL,,,,101,101,89,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,ABC123456,L,2023-P2,SO,HDC,P3,GL,,,,101,101,90,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,ABC123456,L,2023-P2,SO,HDC,P4,GL,,,,101,101,91,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,ABC123456,L,2023-P2,SO,HDC,P5,GL,,,,101,101,92,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,ABC123456,L,2023-P2,SO,HDC,P6,GL,,,,101,101,93,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,ABC123456,L,2023-P2,SO,HDC,O1,GL,,,,101,101,94,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,ABC123456,L,2023-P2,SO,HDC,O2,GL,,,,101,101,95,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,ABC123456,L,2023-P2,SO,HDC,B1,GL,,,,101,101,96,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,P1,GL,,,,101,101,97,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,P2,GL,,,,101,101,98,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,P3,GL,,,,101,101,99,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,P4,GL,,,,101,101,100,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,P5,GL,,,,101,101,101,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,P6,GL,,,,101,101,102,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,O1,GL,,,,101,101,103,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,O2,GL,,,,101,101,104,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,B1,GL,,,,101,101,105,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so do not enter a packaging class
+org_id_placeholder,ABC123456,L,2023-P2,SO,RU,P2,GL,,,,101,,106,Error,Packaging type is reusable packaging (RU) so packaging class can only be primary packaging (P1) or non-primary reusable packaging (P5)
+org_id_placeholder,ABC123456,L,2023-P2,SO,RU,P3,GL,,,,101,,107,Error,Packaging type is reusable packaging (RU) so packaging class can only be primary packaging (P1) or non-primary reusable packaging (P5)
+org_id_placeholder,ABC123456,L,2023-P2,SO,RU,P4,GL,,,,101,,108,Error,Packaging type is reusable packaging (RU) so packaging class can only be primary packaging (P1) or non-primary reusable packaging (P5)
+org_id_placeholder,ABC123456,L,2023-P2,SO,RU,P6,GL,,,,101,,109,Error,Packaging type is reusable packaging (RU) so packaging class can only be primary packaging (P1) or non-primary reusable packaging (P5)
+org_id_placeholder,ABC123456,L,2023-P2,SO,RU,O1,GL,,,,101,,110,Error,Packaging type is reusable packaging (RU) so packaging class can only be primary packaging (P1) or non-primary reusable packaging (P5)
+org_id_placeholder,ABC123456,L,2023-P2,SO,RU,O2,GL,,,,101,,111,Error,Packaging type is reusable packaging (RU) so packaging class can only be primary packaging (P1) or non-primary reusable packaging (P5)
+org_id_placeholder,ABC123456,L,2023-P2,SO,RU,B1,GL,,,,101,,112,Error,Packaging type is reusable packaging (RU) so packaging class can only be primary packaging (P1) or non-primary reusable packaging (P5)
+org_id_placeholder,ABC123456,L,2023-P2,SO,RU,,GL,,,,101,,113,Error,Packaging type is reusable packaging (RU) so packaging class can only be primary packaging (P1) or non-primary reusable packaging (P5)
+org_id_placeholder,ABC123456,L,2023-P2,SO,HDC,,WD,,,,101,101,114,Error,"Packaging material for household drinks containers (HDC) and non-household drinks containers (NDC) must be one of aluminium (AL), glass (GL), plastic (PL) or steel (ST)"
+org_id_placeholder,ABC123456,L,2023-P2,SO,HDC,,PC,,,,101,101,115,Error,"Packaging material for household drinks containers (HDC) and non-household drinks containers (NDC) must be one of aluminium (AL), glass (GL), plastic (PL) or steel (ST)"
+org_id_placeholder,ABC123456,L,2023-P2,SO,HDC,,FC,,,,101,101,116,Error,"Packaging material for household drinks containers (HDC) and non-household drinks containers (NDC) must be one of aluminium (AL), glass (GL), plastic (PL) or steel (ST)"
+org_id_placeholder,ABC123456,L,2023-P2,SO,HDC,,OT,ceramic,,,101,101,117,Error,"Packaging material for household drinks containers (HDC) and non-household drinks containers (NDC) must be one of aluminium (AL), glass (GL), plastic (PL) or steel (ST)"
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,,WD,,,,101,101,118,Error,"Packaging material for household drinks containers (HDC) and non-household drinks containers (NDC) must be one of aluminium (AL), glass (GL), plastic (PL) or steel (ST)"
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,,PC,,,,101,101,119,Error,"Packaging material for household drinks containers (HDC) and non-household drinks containers (NDC) must be one of aluminium (AL), glass (GL), plastic (PL) or steel (ST)"
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,,FC,,,,101,101,120,Error,"Packaging material for household drinks containers (HDC) and non-household drinks containers (NDC) must be one of aluminium (AL), glass (GL), plastic (PL) or steel (ST)"
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,,OT,ceramic,,,101,101,121,Error,"Packaging material for household drinks containers (HDC) and non-household drinks containers (NDC) must be one of aluminium (AL), glass (GL), plastic (PL) or steel (ST)"
+org_id_placeholder,ABC123456,L,2023-P2,,CW,O1,PL,,SC,,101,101,122,Error,Packaging material units not needed for this packaging type
+org_id_placeholder,ABC123456,L,2023-P2,,OW,O2,GL,,SC,,101,101,123,Error,Packaging material units not needed for this packaging type
+org_id_placeholder,ABC123456,L,2023-P2,SO,HH,P1,GL,,,,101,101,124,Error,Packaging material units not needed for this packaging type
+org_id_placeholder,ABC123456,L,2023-P2,SO,NH,P1,GL,,,,101,101,125,Error,Packaging material units not needed for this packaging type
+org_id_placeholder,ABC123456,L,2023-P2,SO,PB,B1,GL,,,,101,101,126,Error,Packaging material units not needed for this packaging type
+org_id_placeholder,ABC123456,L,2023-P2,SO,RU,P1,GL,,,,101,101,127,Error,Packaging material units not needed for this packaging type
+org_id_placeholder,ABC123,L,2023-P2,SO,HDC,,GL,,,,101,,128,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so packaging material quantity must be a whole number
+org_id_placeholder,BCD,L,2023-P2,SO,NDC,,GL,,,,101,,129,Error,Packaging type is household drinks containers (HDC) or non-household drinks containers (NDC) so packaging material quantity must be a whole number
+org_id_placeholder,12,L,2023-P2,PF,HDC,,AL,,,,101,101,130,Error,Duplicate information submitted
+org_id_placeholder,12,L,2023-P2,PF,HDC,,AL,,,,101,101,131,Error,Duplicate information submitted
+org_id_placeholder,XYZ123ABC,S,2023-P2,OM,SP,P6,GL,,,,101,,132,Error,"Organisation size must be L. Currently, only large organisations can report packaging data."
+org_id_placeholder,ABCD,L,2023-P2,SO,CW,O1,PL,,EN,,101,,133,Error,"When packaging activity is entered, packaging type cannot be self-managed waste (CW and OW)"
+org_id_placeholder,ABCD,L,2023-P2,SO,OW,O2,PL,,NI,,101,,134,Error,"When packaging activity is entered, packaging type cannot be self-managed waste (CW and OW)"
+org_id_placeholder,ABCD,L,2023-P2,,NDC,,GL,,,,101,101,135,Error,"When packaging activity is not entered, packaging type can only be self-managed waste (CW and OW)"
+org_id_placeholder,ABCD,L,2023-P2,,HH,P1,GL,,,,101,,136,Error,"When packaging activity is not entered, packaging type can only be self-managed waste (CW and OW)"
+org_id_placeholder,ABCD,L,2023-P2,,NH,P2,GL,,,,101,,137,Error,"When packaging activity is not entered, packaging type can only be self-managed waste (CW and OW)"
+org_id_placeholder,ABCD,L,2023-P2,,PB,B1,GL,,,,101,,138,Error,"When packaging activity is not entered, packaging type can only be self-managed waste (CW and OW)"
+org_id_placeholder,ABCD,L,2023-P2,,HDC,,GL,,,,101,101,139,Error,"When packaging activity is not entered, packaging type can only be self-managed waste (CW and OW)"
+org_id_placeholder,ABCD,L,2023-P2,,RU,P1,GL,,,,101,,140,Error,"When packaging activity is not entered, packaging type can only be self-managed waste (CW and OW)"
+org_id_placeholder,12,L,,PF,HDC,,AL,,,,101,101,141,Error,Enter the time period for submission
+org_id_placeholder,BCD,L,2023-P2,HL,HH,P1,OT,,,,101,,142,Error,"When packaging material is other (OT), you must enter the name of the material in packaging material subtype. It must not include numbers or commas."
+org_id_placeholder,BCD,L,2023-P2,HL,HH,P1,OT,1,,,101,,143,Error,"When packaging material is other (OT), you must enter the name of the material in packaging material subtype. It must not include numbers or commas."
+org_id_placeholder,ÃBC123,L,2023-P2,PF,HDC,,AL,,,,101,101,144,Error,"Subsidiary ID must only include letters a to z, and numbers. It must be 32 characters or less."
+org_id_placeholder,ÃBC123,L,2023-P2,PF,HDC,,AL,,,,101,101,144,Warning,Only one packaging material reported for this organisation. Check you have entered all packaging materials. All must be reported separately.
+org_id_placeholder,ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567,L,2023-P2,PF,HDC,,AL,,,,101,101,145,Error,"Subsidiary ID must only include letters a to z, and numbers. It must be 32 characters or less."
+org_id_placeholder,ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567,L,2023-P2,PF,HDC,,AL,,,,101,101,145,Warning,Only one packaging material reported for this organisation. Check you have entered all packaging materials. All must be reported separately.
+org_id_placeholder,XYZ123ABC,L,2023-P2,SO,HH,P1,WD,ceramic,,,101,,146,Error,Packaging material subtype not needed for this packaging material
+org_id_placeholder,XYZ123ABC,L,2023-P2,SO,HH,P1,AL,ceramic,,,101,,147,Error,Packaging material subtype not needed for this packaging material
+org_id_placeholder,XYZ123ABC,L,2023-P2,SO,HH,P1,ST,ceramic,,,101,,148,Error,Packaging material subtype not needed for this packaging material
+org_id_placeholder,XYZ123ABC,L,2023-P2,SO,HH,P1,GL,ceramic,,,101,,149,Error,Packaging material subtype not needed for this packaging material
+org_id_placeholder,XYZ123ABC,L,2023-P2,SO,HH,P1,PC,ceramic,,,101,,150,Error,Packaging material subtype not needed for this packaging material
+org_id_placeholder,XYZ123ABC,L,2023-P2,SO,HH,P1,FC,ceramic,,,101,,151,Error,Packaging material subtype not needed for this packaging material
+org_id_placeholder,ABC123,L,2023-P2,SO,HH,P1,PL,ceramic,,,101,,152,Error,Packaging material subtype not needed for this packaging material
+org_id_placeholder,ABCDE12345XYZ,L,2023-P2,,CW,O1,PL,,WS,NI,101,,153,Error,"Total weight of a single packaging material transferred to any country must not be more than the total collected. For example, you cannot transfer more plastic than you collect. Check the weight of this packaging material transferred to another country for all rows for this organisation."
+org_id_placeholder,ABCDE12345XYZ,L,2023-P2,,OW,O2,ST,,NI,SC,101,,154,Error,"Total weight of a single packaging material transferred to any country must not be more than the total collected. For example, you cannot transfer more plastic than you collect. Check the weight of this packaging material transferred to another country for all rows for this organisation."
+org_id_placeholder,,L,2023-P2,,OW,O2,AL,,,,101,,155,Error,"When packaging type is self-managed waste (CW and OW), you must enter the from country"
+org_id_placeholder,,L,2023-P2,,CW,O1,PL,,,,101,,156,Error,"When packaging type is self-managed waste (CW and OW), you must enter the from country"
+org_id_placeholder,12,L,2023-P1,SO,HDC,,PL,,,,101,101,157,Error,Submission period must be the same for all of this organisation's packaging data
+org_id_placeholder,BCD,L,2023-P2,,OW,O2,OT,plastic,EN,,101,,158,Error,"Packaging material subtype cannot be plastic, HDPE or PET"
+org_id_placeholder,BCD,L,2023-P2,,OW,O2,OT,HDPE,EN,,101,,159,Error,"Packaging material subtype cannot be plastic, HDPE or PET"
+org_id_placeholder,BCD,L,2023-P2,,OW,O2,OT,PET,EN,,101,,160,Error,"Packaging material subtype cannot be plastic, HDPE or PET"
+org_id_placeholder,XYZ123ABC,L,2023-P2,PF,SP,P3,FC,,,,101,,161,Error,"When organisation size is large (L), packaging type cannot be small organisation packaging - all (SP)"
+org_id_placeholder,123ABC456XYZ,L,2023-P3,IM,HDC,,ST,,,,101,101,162,Error,You're reporting packaging data for January to June 2023. Submission period must be 2023-P1 or 2023-P2.
+org_id_placeholder,ABC123,L,2023-P2,IM,HDC,,ST,,,,99,99,163,Warning,Packaging material weight is less than 100. Check all packaging weights are in kg and not tonnes.
+org_id_placeholder,ABC1235435Ghjd,L,2023-P2,HL,HH,P1,OT,ceramic,,,101,,164,Warning,Only one packaging material reported for this organisation. Check you have entered all packaging materials. All must be reported separately.
+org_id_placeholder,ABC1235435Ghjdty,L,2023-P2,SO,NDC,,PL,,,,101,101,165,Warning,Only one packaging material reported for this organisation. Check you have entered all packaging materials. All must be reported separately.
+org_id_placeholder,ABC123,L,2023-P2,,CW,O1,PC,,NI,,101,,166,Warning,"For self-managed consumer waste (CW), you may not be able to offset your own packaging against aluminium (AL), glass (GL), paper or card (PC), or steel (ST). To check what packaging materials you can offset, you'll need to contact your nation's environmental regulator."
+org_id_placeholder,ABC123,L,2023-P2,,CW,O1,GL,,NI,,101,,167,Warning,"For self-managed consumer waste (CW), you may not be able to offset your own packaging against aluminium (AL), glass (GL), paper or card (PC), or steel (ST). To check what packaging materials you can offset, you'll need to contact your nation's environmental regulator."
+org_id_placeholder,ABC123,L,2023-P2,,CW,O1,AL,,NI,,101,,168,Warning,"For self-managed consumer waste (CW), you may not be able to offset your own packaging against aluminium (AL), glass (GL), paper or card (PC), or steel (ST). To check what packaging materials you can offset, you'll need to contact your nation's environmental regulator."
+org_id_placeholder,ABC123,L,2023-P2,,CW,O1,ST,,NI,,101,,169,Warning,"For self-managed consumer waste (CW), you may not be able to offset your own packaging against aluminium (AL), glass (GL), paper or card (PC), or steel (ST). To check what packaging materials you can offset, you'll need to contact your nation's environmental regulator."
+org_id_placeholder,123ABC456XYZ,L,2023-P2,SO,HDC,,PL,,,,101,100,170,Warning,Check packaging material weight (kg) and units are correct
+org_id_placeholder,123ABC456XYZ,L,2023-P2,PF,NDC,,AL,,,,101,100,171,Warning,Check packaging material weight (kg) and units are correct
