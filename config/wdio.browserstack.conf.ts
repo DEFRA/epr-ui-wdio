@@ -6,7 +6,7 @@ const browserstackOptions = {
   testObservability: true,
   buildIdentifier: "#${BUILD_NUMBER}",
   testObservabilityOptions: {
-    projectName: "EPR Compatability Testing",
+    projectName: "EPR Compatibility Testing",
     buildName: "Regression",
   },
   browserstackLocal: false,

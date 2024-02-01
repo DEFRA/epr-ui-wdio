@@ -100,7 +100,6 @@ export const config: Options.Testrunner = {
     Regulator_Response_Applications: ["./../features/Regulator_Response/Applications/*.feature"],
     Regulator_Response_PoM_Submission: ["./../features/Regulator_Response/PoMSubmission/*.feature"],
     RegulatorResponseDB: ["./../features/Regulator_Response/DatabaseConnection.feature"],
-    MailinatorAPI:["./../features/MailinatorAPI/*.feature"],
     E2E: ["./../features/End_to_End_Tests/**/*.feature"],
     Regulator_Manage_Org_And_Apr_Person: ["./../features/Regulator_Manage_Org_And_Apr_Person/*.feature"]
   },
