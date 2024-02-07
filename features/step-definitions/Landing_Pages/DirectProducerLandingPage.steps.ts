@@ -153,7 +153,7 @@ Then(
     ).getText();
     await expect(orgIdText).toMatch(/^Organisation ID: \d{3} \d{3}/);
 
-    const orgIdNum = orgIdText.slice(17,20) + orgIdText.slice(21,24);
+    const orgIdNum = orgIdText.slice(17,20) + orgIdText.slice(21, 24);
     this.scenarioDataLandingPgs.set("organisationId",orgIdNum)
   }
 );

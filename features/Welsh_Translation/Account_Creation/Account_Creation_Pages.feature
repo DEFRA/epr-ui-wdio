@@ -1,6 +1,6 @@
 @InlineError
 Feature: Account Creation - Welsh Translation
-    As a Welsh Organisation, 
+    As a Welsh Organisation,
     I want to ensure that I can create an account, using the Welsh language
     So I can submit packaging data
 
@@ -17,7 +17,6 @@ Feature: Account Creation - Welsh Translation
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
         Then the Welsh page H1 header should be correct for the "is a registered charity" page
-        And the user signs out
 
     Scenario: Do not need to Create Account page
         Then the user should be on the "is a registered charity" page
@@ -26,16 +25,14 @@ Feature: Account Creation - Welsh Translation
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
         Then the Welsh page H1 header should be correct for the "do not need to create account" page
-        And the user signs out
-               
+
     Scenario: Is registered with companies house
         Then the user should be on the "is a registered charity" page
         Given the organisation is a registered charity: "No"
         Then the user should be on the "is registered with companies house" page
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
-        Then the Welsh page H1 header should be correct for the "is registered with companies house" page 
-        And the user signs out
+        Then the Welsh page H1 header should be correct for the "is registered with companies house" page
 
     Scenario: Type of Organisation page
         Then the user should be on the "is a registered charity" page
@@ -45,7 +42,6 @@ Feature: Account Creation - Welsh Translation
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
         Then the Welsh page H1 header should be correct for the "type of organisation" page
-        And the user signs out
 
     Scenario: Companies House number page
         Then the user should be on the "is a registered charity" page
@@ -55,7 +51,6 @@ Feature: Account Creation - Welsh Translation
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
         Then the Welsh page H1 header should be correct for the "companies house number" page
-        And the user signs out
 
     Scenario: Confirm Companies House number page
         Then the user should be on the "is a registered charity" page
@@ -65,9 +60,8 @@ Feature: Account Creation - Welsh Translation
         Then the user should be on the "confirm companies house number" page
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
-        Then the Welsh page H1 header should be correct for the "confirm companies house number" page          
-        And the user signs out
-    
+        Then the Welsh page H1 header should be correct for the "confirm companies house number" page
+
     Scenario: Trading Name page
         Then the user should be on the "is a registered charity" page
         Given the organisation is a registered charity: "No"
@@ -76,8 +70,7 @@ Feature: Account Creation - Welsh Translation
         Then the user should be on the "trading name" page
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
-        Then the Welsh page H1 header should be correct for the "trading name" page   
-        And the user signs out
+        Then the Welsh page H1 header should be correct for the "trading name" page
 
     Scenario: Business Address Postcode page
         Then the user should be on the "is a registered charity" page
@@ -88,8 +81,7 @@ Feature: Account Creation - Welsh Translation
         Then the user should be on the "business address postcode" page
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
-        Then the Welsh page H1 header should be correct for the "business address postcode" page  
-        And the user signs out
+        Then the Welsh page H1 header should be correct for the "business address postcode" page
 
     Scenario: Select Business Address page
         Then the user should be on the "is a registered charity" page
@@ -101,8 +93,7 @@ Feature: Account Creation - Welsh Translation
         Then the user should be on the "select business address" page
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
-        Then the Welsh page H1 header should be correct for the "select business address" page   
-        And the user signs out
+        Then the Welsh page H1 header should be correct for the "select business address" page
 
     Scenario: Business Address page
         Then the user should be on the "is a registered charity" page
@@ -115,8 +106,7 @@ Feature: Account Creation - Welsh Translation
         Then the user should be on the "business address" page
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
-        Then the Welsh page H1 header should be correct for the "business address" page    
-        And the user signs out
+        Then the Welsh page H1 header should be correct for the "business address" page
 
     Scenario: UK Nation page
         Then the user should be on the "is a registered charity" page
@@ -129,8 +119,7 @@ Feature: Account Creation - Welsh Translation
         Then the user should be on the "uk nation" page
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
-        Then the Welsh page H1 header should be correct for the "uk nation" page   
-        And the user signs out
+        Then the Welsh page H1 header should be correct for the "uk nation" page
 
     Scenario: Role in Organisation - Partnership page
         Then the user should be on the "is a registered charity" page
@@ -145,7 +134,6 @@ Feature: Account Creation - Welsh Translation
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
         Then the Welsh page H1 header should be correct for the "role in organisation manual" page
-        And the user signs out
 
     Scenario: Cannot Create Account page
         Then the user should be on the "is a registered charity" page
@@ -158,8 +146,7 @@ Feature: Account Creation - Welsh Translation
         Then the user should be on the "cannot create account" page
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
-        Then the Welsh page H1 header should be correct for the "cannot create account" page    
-        And the user signs out
+        Then the Welsh page H1 header should be correct for the "cannot create account" page
 
     Scenario: Full Name page
         Then the user should be on the "is a registered charity" page
@@ -174,8 +161,7 @@ Feature: Account Creation - Welsh Translation
         Then the user should be on the "full name" page
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
-        Then the Welsh page H1 header should be correct for the "full name" page  
-        And the user signs out
+        Then the Welsh page H1 header should be correct for the "full name" page
 
     Scenario: Telephone Number page
         Then the user should be on the "is a registered charity" page
@@ -191,8 +177,7 @@ Feature: Account Creation - Welsh Translation
         Then the user should be on the "telephone number" page
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
-        Then the Welsh page H1 header should be correct for the "telephone number" page  
-        And the user signs out
+        Then the Welsh page H1 header should be correct for the "telephone number" page
 
     Scenario: Declaration page
         Then the user should be on the "is a registered charity" page
@@ -206,9 +191,8 @@ Feature: Account Creation - Welsh Translation
         And the role in the organisation is entered manually: "Director"
         And the name is: "Welsh" "Translation"
         And the telephone number is: "07911111111"
-        When checked the details are correct for an account creation journey 
+        When checked the details are correct for an account creation journey
         Then the user should be on the "declaration" page
         And the "Welsh" toggle should be displayed
         When the user clicks the "Welsh" toggle
-        Then the Welsh page H1 header should be correct for the "declaration" page  
-        And the user signs out
+        Then the Welsh page H1 header should be correct for the "declaration" page

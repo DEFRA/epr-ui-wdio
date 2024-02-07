@@ -1,4 +1,4 @@
-Feature: Account Creation - Welsh Translation
+Feature: Delegate User - Welsh Translation
     As a Welsh Organisation,
     I want to ensure that I can Manage an account, using the Welsh language
     So I can Delegate Team Members

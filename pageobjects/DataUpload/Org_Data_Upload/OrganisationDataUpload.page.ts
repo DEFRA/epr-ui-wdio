@@ -2,7 +2,7 @@ import BasePage from "../../base.page.js";
 
 class OrganisationDataUploadPage extends BasePage {
   get Url() {
-    return "/report-data/file-upload-company-details";
+    return "/report-data/upload-organisation-details";
   }
 
   get CSH1HeaderWelsh() {

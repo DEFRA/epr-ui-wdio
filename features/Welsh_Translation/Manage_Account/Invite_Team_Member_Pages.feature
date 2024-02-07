@@ -1,4 +1,4 @@
-Feature: Account Creation - Welsh Translation
+Feature: Invite Team Member - Welsh Translation
     As a Welsh Organisation,
     I want to ensure that I can Manage an account, using the Welsh language
     So I can Invite Team Members

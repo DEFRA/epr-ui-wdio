@@ -100,7 +100,9 @@ export const config: Options.Testrunner = {
     Regulator_Response_Applications: ["./../features/Regulator_Response/Applications/*.feature"],
     Regulator_Response_PoM_Submission: ["./../features/Regulator_Response/PoMSubmission/*.feature"],
     RegulatorResponseDB: ["./../features/Regulator_Response/DatabaseConnection.feature"],
-    E2E: ["./../features/End_to_End_Tests/**/*.feature"],
+    E2E_CS: ["./../features/End_to_End_Tests/**/*.feature"],
+    E2E_Ltd: ["./../features/End_to_End_Tests/**/LimitedCompanyE2E.feature"],
+    E2E_Non_Ltd: ["./../features/End_to_End_Tests/**/NonLimitedCompanyE2E.feature"],
     Regulator_Manage_Org_And_Apr_Person: ["./../features/Regulator_Manage_Org_And_Apr_Person/*.feature"]
   },
   //
@@ -370,7 +372,7 @@ export const config: Options.Testrunner = {
    * @param {number}                 result.duration  duration of scenario in milliseconds
    * @param {object}                 context          Cucumber World object
    */
-  afterScenario: async function (this: CustomWorld, world, result, context: any) {
+  afterScenario: async function (this: CustomWorld, world, result, context: CustomWorld) {
     await basePage.signOut(context.isMobile, context.isWelsh);
   },
   /**

@@ -16,7 +16,7 @@ Feature: Limited Company E2E functionality
         # Create Limited Company Account
         Given the organisation is a registered charity: "No"
         And the organisation is registered with companies house: "Yes"
-        And the organisation's companies house number is: "05807984"
+        And the organisation's companies house number is: "13388050"
         And the organisation's companies house number is confirmed
         And the business or organisation is based in: "England"
         And the role in the organisation is: "Director"
@@ -34,7 +34,7 @@ Feature: Limited Company E2E functionality
         And the user clicks the manage "applications" link
         And the user should be on the "regulators manage applications" page
         # Filter application
-        And the user enters the Organisation Name: "1 ALEXANDRA GROVE LIMITED"
+        And the user enters the Organisation Name: "KAINOS SUPPORT SERVICES LTD"
         When the user clicks on apply filter button
         And the user navigates to enrolment request details page of an organisation
         # Accept application

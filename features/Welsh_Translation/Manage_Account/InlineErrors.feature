@@ -1,5 +1,5 @@
 @InlineError
-Feature: Account Creation - Welsh - Inline Errors
+Feature: Delegate User - Inline errors - Welsh - Inline Errors
     As a Welsh Organisation,
     I want to ensure that I can Manage an account, using the Welsh language
     So I can Delegate Team Members

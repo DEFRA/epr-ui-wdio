@@ -15,7 +15,7 @@ Feature: Compliance Scheme E2E functionality
         # Create Compliance Scheme Account
         Given the organisation is a registered charity: "No"
         And the organisation is registered with companies house: "Yes"
-        And the organisation's companies house number is: "07699232"
+        And the organisation's companies house number is: "06929701"
         And the organisation's companies house number is confirmed
         And the role in the organisation is: "Director"
         And the name is: "E2ETest" "ComplianceScheme"
@@ -32,7 +32,7 @@ Feature: Compliance Scheme E2E functionality
         And the user clicks the manage "applications" link
         And the user should be on the "regulators manage applications" page
         # Filter application
-        And the user enters the Organisation Name: "PAPERPAK LIMITED"
+        And the user enters the Organisation Name: "TGBN LTD"
         When the user clicks on apply filter button
         And the user navigates to enrolment request details page of an organisation
         # Reject application
@@ -53,7 +53,7 @@ Feature: Compliance Scheme E2E functionality
         # Create Compliance Scheme Account
         Given the organisation is a registered charity: "No"
         And the organisation is registered with companies house: "Yes"
-        And the organisation's companies house number is: "07699232"
+        And the organisation's companies house number is: "06929701"
         And the organisation's companies house number is confirmed
         And the role in the organisation is: "Director"
         And the name is: "E2ETest" "ComplianceScheme"
@@ -70,7 +70,7 @@ Feature: Compliance Scheme E2E functionality
         And the user clicks the manage "applications" link
         And the user should be on the "regulators manage applications" page
         # Filter application
-        And the user enters the Organisation Name: "PAPERPAK LIMITED"
+        And the user enters the Organisation Name: "TGBN LTD"
         When the user clicks on apply filter button
         And the user navigates to enrolment request details page of an organisation
         # Accept application

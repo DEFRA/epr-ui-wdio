@@ -11,7 +11,7 @@ class CheckDetailsAndSendInvitePage extends BasePage {
   }
 
   get TitleWelsh() {
-    return "Gwirio’r manylion ac anfon gwahoddiad";
+    return "Gwirio manylion ac anfon gwahoddiad - Rhoi gwybod am ddata pecynwaith";
   }
 
   get txtFullName() {
