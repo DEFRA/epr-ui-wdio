@@ -20,10 +20,19 @@ Feature: Compliance Scheme - Invalid Partner Data upload
         Then the user should be on the "upload partner information" page
         When the user uploads a Partner data CSV file with a name <fileName1>
         Then the Organisation data file upload <fileName1> should be terminated
+        When the user clicks on the error message text in the Partner details error banner
+        Then the Partner details file upload page should scroll to the file upload field
+        And the Partner details file upload field should be highligted
         When the user uploads a Partner data XLS file with a name <fileName2>
         Then the Organisation data file upload <fileName2> should be terminated
+        When the user clicks on the error message text in the Partner details error banner
+        Then the Partner details file upload page should scroll to the file upload field
+        And the Partner details file upload field should be highligted
         When the user uploads without selected data file
         Then the Organisation data file upload <fileName3> should be terminated
+        When the user clicks on the error message text in the Partner details error banner
+        Then the Partner details file upload page should scroll to the file upload field
+        And the Partner details file upload field should be highligted
 
         Examples:
             | OrgDataFileName     | fileName1 | fileName2                  | fileName3 |

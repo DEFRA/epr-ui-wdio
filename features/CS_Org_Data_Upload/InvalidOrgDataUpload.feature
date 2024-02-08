@@ -15,14 +15,29 @@ Feature: Compliance Scheme - Invalid Organisation Data upload
         And the user navigates to "Report organisation details" page as a "Compliance Scheme"
         And the user uploads an Organisation data CSV file with a name <fileName1>
         Then the Organisation data file upload <fileName1> should be terminated
+        When the user clicks on the error message text in the Organisation details error banner
+        Then the Organisation details file upload page should scroll to the file upload field
+        And the Organisation details file upload field should be highligted
         When the user uploads an Organisation data XLS file with a name <fileName2>
         Then the Organisation data file upload <fileName2> should be terminated
+        When the user clicks on the error message text in the Organisation details error banner
+        Then the Organisation details file upload page should scroll to the file upload field
+        And the Organisation details file upload field should be highligted
         When the user uploads without selected data file
         Then the Organisation data file upload <fileName3> should be terminated
+        When the user clicks on the error message text in the Organisation details error banner
+        Then the Organisation details file upload page should scroll to the file upload field
+        And the Organisation details file upload field should be highligted
         When the user uploads an Organisation data CSV file with a name <fileName4>
         Then the Organisation data file upload <fileName4> should be terminated
+        When the user clicks on the error message text in the Organisation details error banner
+        Then the Organisation details file upload page should scroll to the file upload field
+        And the Organisation details file upload field should be highligted
         When the user uploads an Organisation data CSV file with a name <fileName5>
         Then the Organisation data file upload <fileName5> should be terminated
+        When the user clicks on the error message text in the Organisation details error banner
+        Then the Organisation details file upload page should scroll to the file upload field
+        And the Organisation details file upload field should be highligted
         Examples:
             | fileName1 | fileName2              | fileName3 | fileName4                      | fileName5                     |
             | EmptyFile | OrgDataWrongFormatFile | No file   | OrganisationDetailsLessColumns | OrganisationDetailsMoreColumns |

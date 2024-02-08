@@ -187,6 +187,19 @@ When(
   }
 );
 
+When(
+  /^the user clicks on the error message text in the (Organisation details|Partner details|Brand details|Packaging data) error banner$/,
+  async function (
+    pageName:
+      | "Organisation details"
+      | "Packaging data"
+      | "Partner details"
+      | "Brand details"
+  ) {
+    await waitAndClick(await CommonDataUploadPage.txtErrorMessage);
+  }
+);
+
 Then(
   /^the "(continue| go to account home page |confirm)" button should be displayed$/,
   async function (
@@ -227,5 +240,37 @@ Then(
       default:
         throw new Error(`The ${pageName} page is not defined!`);
     }
+  }
+);
+
+Then(
+  /^the (Organisation details|Packaging data|Partner details|Brand details) file upload page should scroll to the file upload field$/,
+  async function (
+    pageName:
+      | "Organisation details"
+      | "Packaging data"
+      | "Partner details"
+      | "Brand details"
+  ) {
+    let fileUploadElem = await CommonDataUploadPage.fieldFileUpload;
+    await expect(fileUploadElem).toBeFocused();
+  }
+);
+
+Then(
+  /^the (Organisation details|Packaging data|Partner details|Brand details) file upload field should be highligted$/,
+  async function (
+    pageName:
+      | "Organisation details"
+      | "Packaging data"
+      | "Partner details"
+      | "Brand details"
+  ) {
+    let fileUploadElem = await CommonDataUploadPage.fieldFileUpload;
+    await expect(
+      (
+        await fileUploadElem.getCSSProperty("outline")
+      ).value
+    ).toContain("rgba(255, 221, 0, 1)");
   }
 );

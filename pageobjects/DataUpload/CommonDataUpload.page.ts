@@ -107,6 +107,14 @@ class CommonDataUploadPage extends BasePage {
     // return $('[data-testid="sub-landing-submission-period-text"]');
   }
 
+  get txtErrorMessage() {
+    return $("[data-testid='error-banner-text']");
+  }
+
+  get fieldFileUpload() {
+    return $(".govuk-file-upload#file");
+  }
+
   private get submissionPeriodCards() {
     return $$("h3.govuk-heading-m");
   }
