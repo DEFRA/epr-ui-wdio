@@ -1,4 +1,4 @@
-@RegulatorResponse
+@Regulator_Response_PoM_Submission
 Feature: Common Landing Pages from Manage Submissions page
   As a Regulator,
   when I navigate to Pending, Accept and Reject submissions and resubmission,

@@ -1,4 +1,4 @@
-@RegulatorResponse
+@Regulator_Response_PoM_Submission
 Feature: Common Landing Pages from Manage Submissions page
   As a Regulator,
   I want to ensure that when I navigate through different common links on the Manage Submissions Page,

@@ -1,4 +1,4 @@
-@RegulatorResponse
+@Regulator_Response_Applications
 Feature: Common Landing Pages from Regulators Enrolment Requests page
   As a Regulator,
   I want to ensure that when I navigate through different common links on the Regulators Enrolment Requests Page,

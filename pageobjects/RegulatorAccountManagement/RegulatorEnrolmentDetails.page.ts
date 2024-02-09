@@ -14,21 +14,20 @@ class RegulatorEnrolmentDetailsPage extends BasePage {
   }
 
   private get transferLink() {
-    return $("=Transfer to another environmental regulator");
+    return $("*=Transfer to another environmental regulator");
   }
 
   private get btnAcceptApprovedPerson() {
-    return $("//div/h3[text()='Approved person']/following-sibling::form/div/div[contains(@class, 'govuk-summary-card__content')]//button[contains(text(), 'Accept')]")
+    return $("//div[h3[contains(text(), 'Approved person')]]/form/div/div[2]/div[2]/button[1]")
   }
 
   private get btnRejectApprovedPerson() {
-    return $("//div/h3[text()='Approved person']/following-sibling::form/div/div[contains(@class, 'govuk-summary-card__content')]//button[contains(text(), 'Reject')]")
-  
+    return $("//div[h3[contains(text(), 'Approved person')]]/form/div/div[2]/div[2]/button[2]")
   }
 
   private get btnDelegatedPerson() {
     return $$(
-      "//div/h3[text()='Delegated person']/following-sibling::form/div//button"
+      "//div[h3[contains(text(), 'Delegated person')]]/form/div/div[2]/div/button"
     );
   }
 

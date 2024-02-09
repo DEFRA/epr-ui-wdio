@@ -1,8 +1,8 @@
 @Regulator_Response_PoM_Submission
 Feature: Common Landing Pages from Manage Submissions page
-  As a Regulator,
-  I want to ensure that when I navigate through different common links on the Accept Submission Page,
-  the Url of the page is correct and I can navigate back
+ As a Regulator,
+  I want to ensure that when I am on Manage packaging data submissions page,
+  I should be able to accept a submission
 
   Background: Open Regulator account page
     Given init common scenario context

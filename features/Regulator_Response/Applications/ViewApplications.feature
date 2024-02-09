@@ -1,4 +1,4 @@
-@RegulatorResponse
+@Regulator_Response_Applications
 Feature: View Applications on the regulator manage applications page
         As a Regulator,
         I want to ensure that when I am on Enrolment Requests page,

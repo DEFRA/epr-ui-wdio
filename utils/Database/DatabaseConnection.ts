@@ -7,13 +7,25 @@ class DatabaseConnection {
     process.cwd(),
     "/utils/DatabaseQueriesFiles/"
   );
-
-  private async initializeSequelize(databaseName: string): Promise<Sequelize> {
+/**
+ * InitializeSequelize is connecting to azure portal SQL Database. the 'az login' is required before running any queries locally
+ * @param username -- the username value is stored in the pipelines. Comment out if testing locally
+ * @param password -- the password value is stored in the pipelines. Comment out if testing locally
+ * @returns 
+ */
+  private async initializeSequelize(
+    databaseName: string,
+    username: string,
+    password: string
+  ): Promise<Sequelize> {
     return new Sequelize({
       dialect: "mssql",
       host: "devrwddbssq1401.database.windows.net",
       port: 1433,
       database: databaseName,
+
+      username: username, 
+      password: password,
       dialectOptions: {
         authentication: {
           type: "azure-active-directory-default",
@@ -26,18 +38,33 @@ class DatabaseConnection {
     });
   }
 
-  private async ExecuteQuery(databseName: string, filename: string) {
+  private async ExecuteQuery(
+    databseName: string,
+    filename: string,
+    username: string,
+    password: string
+  ) {
     const path = `${this.ORGANISATION_TEST_DATA_PATH}${filename}`;
     const longQuery = fs.readFileSync(path, "utf-8");
-    const sequelize = await this.initializeSequelize(databseName);
+    const sequelize = await this.initializeSequelize(
+      databseName,
+      username,
+      password
+    );
     return await sequelize.query(longQuery);
   }
 
-  async SeedUsersForRegulator(databseName: string) {
+  async SeedUsersForRegulator(
+    databseName: string,
+    username: string,
+    password: string
+  ) {
     try {
       const result = await this.ExecuteQuery(
         databseName,
-        "GenerateUsersForDev3.sql"
+        "GenerateUsersForDev3.sql",
+        username,
+        password
       );
       console.log(result);
     } catch (error) {
@@ -45,11 +72,17 @@ class DatabaseConnection {
     }
   }
 
-  async RemoveUsersForRegulator(databseName: string) {
+  async RemoveUsersForRegulator(
+    databseName: string,
+    username: string,
+    password: string
+  ) {
     try {
       const result = await this.ExecuteQuery(
         databseName,
-        "DeleteUsersForDev3.sql"
+        "DeleteUsersForDev3.sql",
+        username,
+        password
       );
       console.log(result);
     } catch (error) {
@@ -57,11 +90,13 @@ class DatabaseConnection {
     }
   }
 
-  async RemoveB2CUser(databseName: string) {
+  async RemoveB2CUser(databseName: string, username: string, password: string) {
     try {
       const result = await this.ExecuteQuery(
         databseName,
-        "AccountCreationCleanup.sql"
+        "AccountCreationCleanup.sql",
+        username,
+        password
       );
       console.log(result);
     } catch (error) {

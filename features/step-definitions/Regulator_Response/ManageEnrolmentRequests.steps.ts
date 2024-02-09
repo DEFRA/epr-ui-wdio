@@ -8,7 +8,7 @@ import { waitUntilPageLoads } from "../../../utils/Waiters.js";
 When(
   /^the user navigates to enrolment request details page of an organisation$/,
   async function () {
-    await RegulatorsManageApplicationsPage.clickView();
+    await RegulatorsManageApplicationsPage.clickOrganisationViewLink();
   }
 );
 

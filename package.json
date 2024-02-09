@@ -24,7 +24,8 @@
     "typescript": "^5.0.4",
     "wdio-chromedriver-service": "^8.1.1",
     "wdio-cucumberjs-json-reporter": "^5.1.6",
-    "@sequelize/core": "^7.0.0-alpha.34"
+    "@sequelize/core": "^7.0.0-alpha.34",
+    "tedious": "^16.6.1"
   },
   "scripts": {
     "dev1": "npx wdio ./config/wdio.dev1.conf.ts",

@@ -2,7 +2,7 @@ import BasePage from "../base.page.js";
 
 class RegulatorsManagePackagingSubmissionsPage extends BasePage {
   get Url() {
-    return "/regulators/manage-submissions";
+    return "/regulators/manage-packaging-data-submissions";
   }
 
   get Title() {

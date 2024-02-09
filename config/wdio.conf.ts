@@ -103,7 +103,10 @@ export const config: Options.Testrunner = {
     E2E_CS: ["./../features/End_to_End_Tests/**/*.feature"],
     E2E_Ltd: ["./../features/End_to_End_Tests/**/LimitedCompanyE2E.feature"],
     E2E_Non_Ltd: ["./../features/End_to_End_Tests/**/NonLimitedCompanyE2E.feature"],
-    Regulator_Manage_Org_And_Apr_Person: ["./../features/Regulator_Manage_Org_And_Apr_Person/*.feature"]
+    Regulator_Manage_Org_And_Apr_Person: ["./../features/Regulator_Manage_Org_And_Apr_Person/*.feature"],
+    SeedDev3Database: ["./../features/SeedDatabase/*.feature"],
+    DeleteDev3Database: ["./../features/DeleteDatabase/*.feature"]
+
   },
   //
   // ============

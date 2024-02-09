@@ -1,4 +1,4 @@
-@RegulatorResponse
+@Regulator_Response_Applications
 Feature: Validation Errors Check on Regulators Response Pages
         As a Regulator,
         I want to ensure that when I am using regulators features incorrectly,
@@ -46,4 +46,4 @@ Scenario: Transfer Application Page - Do not select Agency to Transfer to
     And the user clicks the continue button
     Then error message: "Your summary must be 200 characters or less" should display
     When the user clicks on the error body
-    Then the user should see the transfer notes input box highlighted 
+    Then the user should see the transfer notes input box highlighted

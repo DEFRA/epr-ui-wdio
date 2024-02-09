@@ -1,4 +1,4 @@
-@RegulatorResponse
+@Regulator_Response_Applications
 Feature: Reject Requests on Enrolment Requests Page
   As a Regulator,
   I want to ensure that when I am on Enrolment Requests page,

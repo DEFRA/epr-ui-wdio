@@ -1,4 +1,4 @@
-@RegulatorResponse
+@Regulator_Response_Applications
 Feature: Transfer application on Transfer Application Page
   As a Regulator,
   I want to ensure that when I am on Transfer Application Page,

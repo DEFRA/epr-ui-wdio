@@ -598,14 +598,17 @@ Then(/^the invitation is sent to the member$/, async function () {
 });
 
 Then(
-  /^the user should be able to run the query "(.*)"$/,
+  /^the user "(.*)" data in the database$/,
   async function (this: CustomWorld, script: string) {
+    const username = process.argv[process.argv.indexOf("-username") + 1];
+    const password = process.argv[process.argv.indexOf("-password") + 1];
+
     if (script == "seed") {
-      await DatabaseConnection.SeedUsersForRegulator(this.databaseName);
+      await DatabaseConnection.SeedUsersForRegulator(this.databaseName,username,password);
     } else if (script == "remove") {
-      await DatabaseConnection.RemoveUsersForRegulator(this.databaseName);
+      await DatabaseConnection.RemoveUsersForRegulator(this.databaseName,username,password);
     } else {
-      await DatabaseConnection.RemoveB2CUser(this.databaseName);
+      await DatabaseConnection.RemoveB2CUser(this.databaseName,username,password);
     }
   }
 );

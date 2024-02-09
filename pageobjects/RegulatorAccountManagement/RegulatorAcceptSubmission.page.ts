@@ -3,7 +3,7 @@ import BasePage from "../base.page.js";
 class RegulatorAcceptSubmissionPage extends BasePage{
 
     get Url(){
-        return "/regulators/accept-submission"
+        return "/regulators/packaging-data-submission-confirm"
     }
 
     get Title(){

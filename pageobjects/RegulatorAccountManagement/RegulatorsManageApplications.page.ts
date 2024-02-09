@@ -22,7 +22,7 @@ class RegulatorsManageApplicationsPage extends BasePage {
   }
 
   private get linkTextClearFilters() {
-    return $("=Clear filters");
+    return $("//button[normalize-space()='Clear filters']");
   }
 
   private get tblApplicationsBody() {
@@ -57,8 +57,8 @@ class RegulatorsManageApplicationsPage extends BasePage {
     return await this.tblApplications[0].$$("td")[0].getText();
   }
 
-  async ClickOrganisationViewLink() {
-    return await this.tblApplications[0].$$("td")[3].click();
+  async clickOrganisationViewLink() {
+    return await this.tblApplications[0].$$("td")[3].$("button").click();
   }
 
   async GetNumberOfApplications() {

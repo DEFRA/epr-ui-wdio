@@ -95,15 +95,19 @@ export async function replaceTestDataOrganisationIdWithPlaceholder(
   }
   const currentFile = await fs.readFile(pathToFile as string, "utf-8");
 
-  // Parse the CSV data into arrays of rows
-  const currentFileAsArrayOfRows = currentFile.trim().split("\r");
-
-  // Update organisation id for eash record
-  const updatedRows = currentFileAsArrayOfRows.map((elem, index) =>
-    index > 0 ? elem.replaceAll(organisationId, "org_id_placeholder") : elem
+  await fs.writeFile(
+    pathToFile as string,
+    // Parse the CSV data into arrays of rows
+    currentFile
+      .trim()
+      .split("\n")
+      // Update organisation id for eash record
+      .map((elem, index) =>
+        index > 0 ? elem.replaceAll(organisationId, "org_id_placeholder") : elem
+      )
+      .join("\n"),
+    "utf-8"
   );
-
-  await fs.writeFile(pathToFile as string, updatedRows.join("\r"), "utf-8");
 }
 
 export async function replaceExistReportOrganisationIdWithPlaceholder(
@@ -142,15 +146,19 @@ export async function replaceExistReportOrganisationIdWithPlaceholder(
   }
   const currentFile = await fs.readFile(pathToFile as string, "utf-8");
 
-  // Parse the CSV data into arrays of rows
-  const currentFileAsArrayOfRows = currentFile.trim().split("\n");
-
-  // Update organisation id for eash record
-  const updatedRows = currentFileAsArrayOfRows.map((elem, index) =>
-    index > 0 ? elem.replaceAll(organisationId, "org_id_placeholder") : elem
+  await fs.writeFile(
+    pathToFile as string,
+    // Parse the CSV data into arrays of rows
+    currentFile
+      .trim()
+      .split("\n")
+      // Update organisation id for eash record
+      .map((elem, index) =>
+        index > 0 ? elem.replaceAll(organisationId, "org_id_placeholder") : elem
+      )
+      .join("\n"),
+    "utf-8"
   );
-
-  await fs.writeFile(pathToFile as string, updatedRows.join("\n"), "utf-8");
 }
 
 export async function replaceTestDataPlaceholderWithOrganisationId(
@@ -187,15 +195,19 @@ export async function replaceTestDataPlaceholderWithOrganisationId(
   }
   const currentFile = await fs.readFile(pathToFile as string, "utf-8");
 
-  // Parse the CSV data into arrays of rows
-  const currentFileAsArrayOfRows = currentFile.trim().split("\r");
-
-  // Update organisation id for eash record
-  const updatedRows = currentFileAsArrayOfRows.map((elem, index) =>
-    index > 0 ? elem.replaceAll("org_id_placeholder", organisationId) : elem
+  await fs.writeFile(
+    pathToFile as string,
+    // Parse the CSV data into arrays of rows
+    currentFile
+      .trim()
+      .split("\n")
+      // Update organisation id for eash record
+      .map((elem, index) =>
+        index > 0 ? elem.replaceAll("org_id_placeholder", organisationId) : elem
+      )
+      .join("\n"),
+    "utf-8"
   );
-
-  await fs.writeFile(pathToFile as string, updatedRows.join("\r"), "utf-8");
 }
 
 export async function replaceExistReportPlaceholderWithOrganisationId(
@@ -230,13 +242,17 @@ export async function replaceExistReportPlaceholderWithOrganisationId(
   }
   const currentFile = await fs.readFile(pathToFile as string, "utf-8");
 
-  // Parse the CSV data into arrays of rows
-  const currentFileAsArrayOfRows = currentFile.trim().split("\n");
-
-  // Update organisation id for eash record
-  const updatedRows = currentFileAsArrayOfRows.map((elem, index) =>
-    index > 0 ? elem.replaceAll("org_id_placeholder", organisationId) : elem
+  await fs.writeFile(
+    pathToFile as string,
+    // Parse the CSV data into arrays of rows
+    currentFile
+      .trim()
+      .split("\n")
+      // Update organisation id for eash record
+      .map((elem, index) =>
+        index > 0 ? elem.replaceAll("org_id_placeholder", organisationId) : elem
+      )
+      .join("\n"),
+    "utf-8"
   );
-
-  await fs.writeFile(pathToFile as string, updatedRows.join("\n"), "utf-8");
 }

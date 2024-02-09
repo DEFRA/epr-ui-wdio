@@ -1,4 +1,4 @@
-@RegulatorResponse
+@Regulator_Response_Applications
 Feature: Regulator Response of Applications
         As a Regulator,
         I want to filter applications based on Orgnaisation and/or User Type

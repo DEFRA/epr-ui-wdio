@@ -7,7 +7,7 @@ Feature: Filter Submissions from Manage Submissions page
   Background: Open Regulator account page
     Given init common scenario context
     And the registered user is on the "regulators home" page
-    When the user logs in as an automation test user for: "Regulator Admin - ENG"
+    When the user logs in as an automation test user for: "Regulator - ENG"
     And cookies are "Accepted"
     Then the page title should be correct for the "Regulators Home" page
     And the user should be able to view the "pEPR: Regulators’ Service" details for the Regulator

@@ -29,6 +29,17 @@ steps:
     sudo apt-get install -f -y
     sudo rm -f /usr/src/google-chrome-stable_current_amd64.deb
   displayName: 'Install Chrome'
+  
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: AZD-RWD-DEV1
+    scriptType: bash
+    scriptLocation: inlineScript 
+    inlineScript: |
+      az login -u $(AzureUsername) -p $(AzurePassword)
+      npm install
+      npx wdio ./config/wdio.azure.dev3.conf.ts --suite SeedDev3Database -username $(username) -password $(password)
+  displayName: 'az login - seed db'
 
 - task: AzureCLI@2
   inputs:
@@ -36,9 +47,18 @@ steps:
     scriptType: bash
     scriptLocation: inlineScript 
     inlineScript: |
-      npm install
-      npx wdio ./config/wdio.azure.dev3.conf.ts --suite Regulator_Response_Applications Regulator_Response_PoM_Submission -secrets $(keyVaultUrlDev)
+      npx wdio ./config/wdio.azure.dev3.conf.ts --suite Regulator_Response_Applications Regulator_Response_PoM_Submission -secrets $(keyVaultUrlDev) -username $(username) -password $(password)
   displayName: 'npm install and run tests'
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: AZD-RWD-DEV1
+    scriptType: bash
+    scriptLocation: inlineScript 
+    inlineScript: |
+      az login -u $(AzureUsername) -p $(AzurePassword)
+      npx wdio ./config/wdio.azure.dev3.conf.ts --suite DeleteDev3Database -username $(username) -password $(password)
+  displayName: 'az login - delete db '
 
 - task: PublishCucumberReport@1
   inputs:
