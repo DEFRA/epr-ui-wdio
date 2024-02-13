@@ -37,7 +37,7 @@ steps:
     scriptLocation: inlineScript 
     inlineScript: |
       npm install
-      npx wdio ./config/wdio.azure.dev1.conf.ts --suite Landing_Pages CS_Org_Data_Upload CS_PoM_Data_Upload Producer_Org_Data_Upload Producer_PoM_Data_Upload CS_PoM_Data_Submission Producer_PoM_Data_Submission CS_Org_Data_Submission Producer_Org_Data_Submission -secrets $(keyVaultUrlDev)
+      npx wdio ./config/wdio.azure.dev1.conf.ts --suite CS_Org_Data_Upload CS_PoM_Data_Upload CS_PoM_Data_Submission CS_Org_Data_Submission -secrets $(keyVaultUrlDev)
   displayName: 'npm install and run tests'
 
 - task: PublishCucumberReport@1

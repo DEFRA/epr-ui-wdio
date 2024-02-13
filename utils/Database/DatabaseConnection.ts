@@ -54,47 +54,16 @@ class DatabaseConnection {
     return await sequelize.query(longQuery);
   }
 
-  async SeedUsersForRegulator(
+  async ExecuteDatabaseQuery(
     databseName: string,
+    sqlScriptFile: string,
     username: string,
     password: string
   ) {
     try {
       const result = await this.ExecuteQuery(
         databseName,
-        "GenerateUsersForDev3.sql",
-        username,
-        password
-      );
-      console.log(result);
-    } catch (error) {
-      console.error("Unable to connect to the database:", error);
-    }
-  }
-
-  async RemoveUsersForRegulator(
-    databseName: string,
-    username: string,
-    password: string
-  ) {
-    try {
-      const result = await this.ExecuteQuery(
-        databseName,
-        "DeleteUsersForDev3.sql",
-        username,
-        password
-      );
-      console.log(result);
-    } catch (error) {
-      console.error("Unable to connect to the database:", error);
-    }
-  }
-
-  async RemoveB2CUser(databseName: string, username: string, password: string) {
-    try {
-      const result = await this.ExecuteQuery(
-        databseName,
-        "AccountCreationCleanup.sql",
+        sqlScriptFile,
         username,
         password
       );

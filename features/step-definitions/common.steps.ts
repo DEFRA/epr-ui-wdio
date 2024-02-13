@@ -30,8 +30,8 @@ import { GetSecretClient, getSecret } from "../../utils/LoginConf.js";
 const basePage = new BasePage();
 
 Given(/^init common scenario context/, async function (this: CustomWorld) {
-  const keyVaultUrl = process.argv[process.argv.indexOf("-secrets") + 1]
-  this.secretClient = await GetSecretClient(keyVaultUrl)
+  const keyVaultUrl = process.argv[process.argv.indexOf("-secrets") + 1];
+  this.secretClient = await GetSecretClient(keyVaultUrl);
 
   this.environment = browser.options.baseUrl
     ?.slice(browser.options.baseUrl.indexOf("-"))
@@ -85,7 +85,7 @@ Given(/^the user goes to home page$/, async function (this: CustomWorld) {
 
 Given(/^the user signs out$/, async function (this: CustomWorld) {
   await basePage.signOut(this.isMobile, this.isWelsh);
-  
+
   // Need to reset the language variable to English as this is what the application does when the user signs out.
   this.isWelsh = false;
 });
@@ -113,114 +113,170 @@ Given(
     switch (user) {
       case "Account Creation":
         await LoginPage.login(
-          await getSecret(this.secretClient,
-            process.env.ACC_CREATE_APPROVED_USERNAME as string) as string,
-          await getSecret(this.secretClient,
-              process.env.ACC_CREATE_APPROVED_PASSWORD as string) as string
+          (await getSecret(
+            this.secretClient,
+            process.env.ACC_CREATE_APPROVED_USERNAME as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.ACC_CREATE_APPROVED_PASSWORD as string
+          )) as string
         );
         break;
       case "Accept Cookies":
         await LoginPage.login(
-          await getSecret(this.secretClient,
-            process.env.ACC_CREATE_APPROVED_USERNAME_ACCEPT_COOKIES as string) as string,
-          await getSecret(this.secretClient,
-            process.env.ACC_CREATE_APPROVED_PASSWORD_ACCEPT_COOKIES as string) as string
+          (await getSecret(
+            this.secretClient,
+            process.env.ACC_CREATE_APPROVED_USERNAME_ACCEPT_COOKIES as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.ACC_CREATE_APPROVED_PASSWORD_ACCEPT_COOKIES as string
+          )) as string
         );
         break;
       case "Reject Cookies":
         await LoginPage.login(
-          await getSecret(this.secretClient,
-            process.env.ACC_CREATE_APPROVED_USERNAME_REJECT_COOKIES as string) as string,
-          await getSecret(this.secretClient,
-            process.env.ACC_CREATE_APPROVED_PASSWORD_REJECT_COOKIES as string) as string
+          (await getSecret(
+            this.secretClient,
+            process.env.ACC_CREATE_APPROVED_USERNAME_REJECT_COOKIES as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.ACC_CREATE_APPROVED_PASSWORD_REJECT_COOKIES as string
+          )) as string
         );
         break;
       case "Regulator":
         await LoginPage.login(
-          await getSecret(this.secretClient, 
-            process.env.REGULATOR_USERNAME as string) as string,
-          await getSecret(this.secretClient, 
-            process.env.REGULATOR_PASSWORD as string) as string
+          (await getSecret(
+            this.secretClient,
+            process.env.REGULATOR_USERNAME as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.REGULATOR_PASSWORD as string
+          )) as string
         );
         break;
       case "Regulator - ENG":
         await LoginPage.login(
-          await getSecret(this.secretClient,
-            process.env.REGULATOR_ENG_USERNAME as string) as string,
-          await getSecret(this.secretClient,
-            process.env.REGULATOR_ENG_PASSWORD as string) as string
+          (await getSecret(
+            this.secretClient,
+            process.env.REGULATOR_ENG_USERNAME as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.REGULATOR_ENG_PASSWORD as string
+          )) as string
         );
         break;
       case "Regulator - NI":
         await LoginPage.login(
-          await getSecret(this.secretClient,
-            process.env.REGULATOR_NI_USERNAME as string) as string,
-          await getSecret(this.secretClient,
-            process.env.REGULATOR_NI_PASSWORD as string) as string
+          (await getSecret(
+            this.secretClient,
+            process.env.REGULATOR_NI_USERNAME as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.REGULATOR_NI_PASSWORD as string
+          )) as string
         );
         break;
-        case "Regulator - SCO":
-          await LoginPage.login(
-            await getSecret(this.secretClient,
-              process.env.REGULATOR_SCO_USERNAME as string) as string,
-            await getSecret(this.secretClient,
-              process.env.REGULATOR_SCO_PASSWORD as string) as string
-          );
-          break;
-          case "Regulator Basic":
+      case "Regulator - SCO":
         await LoginPage.login(
-          await getSecret(this.secretClient,
-            process.env.REGULATOR_BASIC_USERNAME as string) as string,
-          await getSecret(this.secretClient,
-            process.env.REGULATOR_BASIC_PASSWORD as string) as string
+          (await getSecret(
+            this.secretClient,
+            process.env.REGULATOR_SCO_USERNAME as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.REGULATOR_SCO_PASSWORD as string
+          )) as string
+        );
+        break;
+      case "Regulator Basic":
+        await LoginPage.login(
+          (await getSecret(
+            this.secretClient,
+            process.env.REGULATOR_BASIC_USERNAME as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.REGULATOR_BASIC_PASSWORD as string
+          )) as string
         );
         break;
       case "End to End Ltd Co. Org":
         await LoginPage.login(
-          await getSecret(this.secretClient,
-            process.env.E2E_LTD_CO_ORG_USERNAME as string) as string,
-          await getSecret(this.secretClient,
-            process.env.E2E_LTD_CO_ORG_PASSWORD as string) as string
+          (await getSecret(
+            this.secretClient,
+            process.env.E2E_LTD_CO_ORG_USERNAME as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.E2E_LTD_CO_ORG_PASSWORD as string
+          )) as string
         );
         break;
       case "End to End Ltd Co. PoM":
         await LoginPage.login(
-          await getSecret(this.secretClient,
-            process.env.E2E_LTD_CO_POM_USERNAME as string) as string,
-          await getSecret(this.secretClient,
-            process.env.E2E_LTD_CO_POM_PASSWORD as string) as string
+          (await getSecret(
+            this.secretClient,
+            process.env.E2E_LTD_CO_POM_USERNAME as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.E2E_LTD_CO_POM_PASSWORD as string
+          )) as string
         );
         break;
       case "End to End Non Ltd Co. Org":
         await LoginPage.login(
-          await getSecret(this.secretClient,
-            process.env.E2E_NON_LTD_CO_ORG_USERNAME as string) as string,
-          await getSecret(this.secretClient,
-            process.env.E2E_NON_LTD_CO_ORG_PASSWORD as string) as string
+          (await getSecret(
+            this.secretClient,
+            process.env.E2E_NON_LTD_CO_ORG_USERNAME as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.E2E_NON_LTD_CO_ORG_PASSWORD as string
+          )) as string
         );
         break;
       case "End to End Non Ltd Co. PoM":
         await LoginPage.login(
-          await getSecret(this.secretClient,
-            process.env.E2E_NON_LTD_CO_POM_USERNAME as string) as string,
-          await getSecret(this.secretClient,
-            process.env.E2E_NON_LTD_CO_POM_PASSWORD as string) as string
+          (await getSecret(
+            this.secretClient,
+            process.env.E2E_NON_LTD_CO_POM_USERNAME as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.E2E_NON_LTD_CO_POM_PASSWORD as string
+          )) as string
         );
         break;
       case "End to End CS":
         await LoginPage.login(
-          await getSecret(this.secretClient,
-            process.env.E2E_COMPLIANCE_SCHEME_USERNAME as string) as string,
-          await getSecret(this.secretClient,
-            process.env.E2E_COMPLIANCE_SCHEME_PASSWORD as string) as string
+          (await getSecret(
+            this.secretClient,
+            process.env.E2E_COMPLIANCE_SCHEME_USERNAME as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.E2E_COMPLIANCE_SCHEME_PASSWORD as string
+          )) as string
         );
         break;
       case "End to End Reject":
         await LoginPage.login(
-          await getSecret(this.secretClient,
-            process.env.E2E_REJECT_USERNAME as string) as string,
-          await getSecret(this.secretClient,
-            process.env.E2E_REJECT_PASSWORD as string) as string
+          (await getSecret(
+            this.secretClient,
+            process.env.E2E_REJECT_USERNAME as string
+          )) as string,
+          (await getSecret(
+            this.secretClient,
+            process.env.E2E_REJECT_PASSWORD as string
+          )) as string
         );
         break;
     }
@@ -351,11 +407,7 @@ When(
 
 When(
   /^the user clicks the "(Continue|Confirm)" button$/,
-  async function (
-    buttonName:
-      | "Continue"
-      | "Confirm"
-  ) {
+  async function (buttonName: "Continue" | "Confirm") {
     switch (buttonName) {
       case "Continue":
         await basePage.clickContinue(this.isWelsh);
@@ -598,17 +650,44 @@ Then(/^the invitation is sent to the member$/, async function () {
 });
 
 Then(
-  /^the user "(.*)" data in the database$/,
-  async function (this: CustomWorld, script: string) {
+  /^the user remove account data for "(Accept Cookies|Reject Cookies)" from the database$/,
+  async function (
+    this: CustomWorld,
+    script: "Accept Cookies" | "Reject Cookies"
+  ) {
     const username = process.argv[process.argv.indexOf("-username") + 1];
     const password = process.argv[process.argv.indexOf("-password") + 1];
 
-    if (script == "seed") {
-      await DatabaseConnection.SeedUsersForRegulator(this.databaseName,username,password);
-    } else if (script == "remove") {
-      await DatabaseConnection.RemoveUsersForRegulator(this.databaseName,username,password);
-    } else {
-      await DatabaseConnection.RemoveB2CUser(this.databaseName,username,password);
-    }
+    const sqlScriptFile =
+      script == "Accept Cookies"
+        ? "RollbackUser_AcceptCookies.sql"
+        : "RollbackUser_RejectCookies.sql";
+
+    await DatabaseConnection.ExecuteDatabaseQuery(
+      this.databaseName,
+      sqlScriptFile,
+      username,
+      password
+    );
+  }
+);
+
+Then(
+  /^the user "(seeds|removes)" application data from the database$/,
+  async function (this: CustomWorld, script: "seeds" | "removes") {
+    const username = process.argv[process.argv.indexOf("-username") + 1];
+    const password = process.argv[process.argv.indexOf("-password") + 1];
+
+    const sqlScriptFile =
+      script == "seeds"
+        ? "SeedApplicationForRegReview.sql"
+        : "RemoveApplicationForRegReview.sql";
+
+    await DatabaseConnection.ExecuteDatabaseQuery(
+      this.databaseName,
+      sqlScriptFile,
+      username,
+      password
+    );
   }
 );

@@ -37,7 +37,7 @@ steps:
     scriptLocation: inlineScript 
     inlineScript: |
       npm install
-      npx wdio ./config/wdio.azure.dev5.conf.ts --suite Welsh_Translation_Account_Creation Welsh_Translation_Manage_Account Welsh_Translation_Report_Data -secrets $(keyVaultUrlDev)
+      npx wdio ./config/wdio.azure.dev5.conf.ts --suite Welsh_Translation_Account_Creation -secrets $(keyVaultUrlDev)
   displayName: 'npm install and run tests'
 
 - task: PublishCucumberReport@1

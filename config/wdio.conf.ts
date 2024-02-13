@@ -105,8 +105,8 @@ export const config: Options.Testrunner = {
     E2E_Non_Ltd: ["./../features/End_to_End_Tests/**/NonLimitedCompanyE2E.feature"],
     Regulator_Manage_Org_And_Apr_Person: ["./../features/Regulator_Manage_Org_And_Apr_Person/*.feature"],
     SeedDev3Database: ["./../features/SeedDatabase/*.feature"],
-    DeleteDev3Database: ["./../features/DeleteDatabase/*.feature"]
-
+    RollbackDev2Database: ["./../features/RollbackDatabase/RollbackDev2Database.feature"],
+    RollbackDev3Database: ["./../features/RollbackDatabase/RollbackDev3Database.feature"]
   },
   //
   // ============

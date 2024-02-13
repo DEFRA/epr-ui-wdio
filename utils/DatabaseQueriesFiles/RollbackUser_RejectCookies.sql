@@ -1,5 +1,4 @@
-DECLARE @emails NVARCHAR(max) = 'carl.tildsley+dev3test@kainos.com'
-
+DECLARE @emails NVARCHAR(max) = 'carl.tildsley+autotestuser_rejectcookies@kainos.com'
 
 SET XACT_ABORT ON
 

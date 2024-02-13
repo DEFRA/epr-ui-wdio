@@ -1,4 +1,4 @@
-@SeedDev3Database
+@DeleteDev3Database
 Feature: Accept Requests on Enrolment Requests Page
   As a Regulator,
   I want to ensure that when I am on Enrolment Requests page,
@@ -7,4 +7,3 @@ Feature: Accept Requests on Enrolment Requests Page
   Scenario: Open Regulator account page
     Given init common scenario context
     And the user "removes" application data from the database
-    And the user "seeds" application data from the database

@@ -6,7 +6,7 @@ trigger: none
 pr: none
 
 schedules:
-- cron: 0 4 * * Mon-Fri
+- cron: 0 5 * * Mon-Fri
   displayName: Daily Automated Test Run
   branches:
     include:
@@ -29,15 +29,14 @@ steps:
     sudo apt-get install -f -y
     sudo rm -f /usr/src/google-chrome-stable_current_amd64.deb
   displayName: 'Install Chrome'
-
+  
 - task: AzureCLI@2
   inputs:
     azureSubscription: AZD-RWD-DEV1
     scriptType: bash
     scriptLocation: inlineScript 
     inlineScript: |
-      npm install
-      npx wdio ./config/wdio.azure.dev2.conf.ts --suite Account_Creation Delegated_User Privacy_Cookies_Policy CS_Dissociates_From_Producer Welsh_Translation_CS_Dissociates_From_Producer -secrets $(keyVaultUrlDev)
+      npx wdio ./config/wdio.azure.dev3.conf.ts --suite Regulator_Response_PoM_Submission -secrets $(keyVaultUrlDev)
   displayName: 'npm install and run tests'
 
 - task: PublishCucumberReport@1
@@ -50,13 +49,3 @@ steps:
     title: $(Build.DefinitionName)
   displayName: Publish report
   condition: always()
-
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: AZD-RWD-DEV1
-    scriptType: bash
-    scriptLocation: inlineScript 
-    inlineScript: |
-      az login -u $(AzureUsername) -p $(AzurePassword)
-      npx wdio ./config/wdio.azure.dev2.conf.ts --suite RollbackDev2Database -username $(username) -password $(password)
-  displayName: 'az login - delete db'

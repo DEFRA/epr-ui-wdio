@@ -6,4 +6,5 @@ Feature: Accept Requests on Enrolment Requests Page
 
   Scenario: Open Regulator account page
     Given init common scenario context
-    And the user "remove" data in the database
+    And the user remove account data for "Accept Cookies" from the database
+    And the user remove account data for "Reject Cookies" from the database
