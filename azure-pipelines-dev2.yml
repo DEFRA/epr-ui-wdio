@@ -60,3 +60,4 @@ steps:
       az login -u $(AzureUsername) -p $(AzurePassword)
       npx wdio ./config/wdio.azure.dev2.conf.ts --suite RollbackDev2Database -username $(username) -password $(password)
   displayName: 'az login - delete db'
+  condition: always()
