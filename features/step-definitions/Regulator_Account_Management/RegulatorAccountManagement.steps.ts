@@ -1,4 +1,4 @@
-import { Then, When } from "@wdio/cucumber-framework";
+import { Then } from "@wdio/cucumber-framework";
 import RegulatorsHomePage from "../../../pageobjects/RegulatorAccountManagement/RegulatorsHome.page.js";
 import { waitAndClick, waitUntilPageLoads } from "../../../utils/Waiters.js";
 import cucumberJson from "wdio-cucumberjs-json-reporter";
@@ -35,9 +35,9 @@ Then(
 );
 
 Then(
-  /^the manage "(account|applications|packaging data submissions)" link should be displayed$/,
+  /^the manage "(account|applications|packaging data submissions|organisations)" link should be displayed$/,
   async function (
-    linkName: "account" | "applications" | "packaging data submissions"
+    linkName: "account" | "applications" | "packaging data submissions" | "organisations"
   ) {
     let elem: WebdriverIO.Element;
     switch (linkName) {
@@ -50,6 +50,9 @@ Then(
       case "packaging data submissions":
         elem = await RegulatorsHomePage.lnkManagePackagingSubmissions;
         break;
+        case "organisations":
+            elem = await RegulatorsHomePage.lnkManageOrganisations;
+            break;
     }
     await expect(elem).toBeDisplayed();
     cucumberJson.attach(
@@ -60,9 +63,9 @@ Then(
 );
 
 Then(
-  /^the user clicks the manage "(account|applications|packaging data submissions)" link$/,
+  /^the user clicks the manage "(account|applications|packaging data submissions|organisations)" link$/,
   async function (
-    linkName: "account" | "applications" | "packaging data submissions"
+    linkName: "account" | "applications" | "packaging data submissions" | "organisations"
   ) {
     switch (linkName) {
       case "account":
@@ -71,6 +74,9 @@ Then(
       case "applications":
         await waitAndClick(await RegulatorsHomePage.lnkManageApplications);
         break;
+        case "organisations":
+            await waitAndClick(await RegulatorsHomePage.lnkManageOrganisations);
+            break
       case "packaging data submissions":
         await waitAndClick(
           await RegulatorsHomePage.lnkManagePackagingSubmissions

@@ -93,7 +93,7 @@ export default class BasePage {
   }
 
   private get txtFieldErrorMessage() {
-    return $("p.govuk-error-message");
+    return $(".govuk-error-message");
   }
 
   private get btnMenu() {
@@ -197,9 +197,12 @@ export default class BasePage {
   }
 
   async FieldErrorMessage() {
-    return (await (await this.txtFieldErrorMessage).getText()).split(':')[1].trim();
-  }
-
+   const errorMessageElement = await this.txtFieldErrorMessage
+   const errorMessageText = await errorMessageElement.getText()
+   const shouldTrim = await errorMessageElement.getTagName()==='p'
+   return shouldTrim ? errorMessageText.split(':')[1].trim() : errorMessageText;
+   }
+ 
   async PageH1Header() {
     return (await this.txtPageH1Header).getText();
   }
@@ -211,7 +214,12 @@ export default class BasePage {
   async TransferBannerTitle() {
     return (await this.transferBannerTitle).getText();
   }
-
+  get searchQuery() {
+    return $("#SearchTerm");
+  }
+  async enterSearchQuery(searchValue: string) {
+    return await (await this.searchQuery).setValue(searchValue);
+  }
   async TransferBannerContent() {
     return (await this.transferBannerContent).getText();
   }

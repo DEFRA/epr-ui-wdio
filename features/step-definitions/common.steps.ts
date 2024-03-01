@@ -691,3 +691,12 @@ Then(
     );
   }
 );
+
+When(
+    /^the user enter search query: "(.*)"$/,
+    async function (searchQuery: string) {
+      await waitUntilPageLoads();
+      await basePage.enterSearchQuery(searchQuery);
+    }
+);
+

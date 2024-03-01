@@ -78,6 +78,9 @@ import RegulatorsManagePackagingSubmissionsPage from "../pageobjects/RegulatorAc
 import RegulatorsSubmissionDetailsPage from "../pageobjects/RegulatorAccountManagement/RegulatorsSubmissionDetails.page.js";
 import RegulatorAcceptSubmissionPage from "../pageobjects/RegulatorAccountManagement/RegulatorAcceptSubmission.page.js";
 import RegulatorRejectSubmissionPage from "../pageobjects/RegulatorAccountManagement/RegulatorRejectSubmission.page.js";
+import RegulatorSearchPage from "../pageobjects/RegulatorAccountManagement/RegulatorSearch.page.js";
+import RegulatorSearchResultPage from "../pageobjects/RegulatorAccountManagement/RegulatorSearchResult.page.js";
+
 import PowerBISignInPage from "../pageobjects/PowerBISignIn.page.js";
 import SchemeMembersPage from "../pageobjects/CSDissociatesFromProducer/SchemeMembers.page.js";
 import CSDissociatesMemberDetailsPage from "../pageobjects/CSDissociatesFromProducer/MemberDetails.page.js";
@@ -198,6 +201,8 @@ const RegulatorPages = {
   "regulators submission details": RegulatorsSubmissionDetailsPage.Url,
   "regulators accept submission": RegulatorAcceptSubmissionPage.Url,
   "regulators reject submission": RegulatorRejectSubmissionPage.Url,
+  "regulator search": RegulatorSearchPage.Url,
+  "Regulators search result": RegulatorSearchResultPage.Url,
 };
 
 const AccessDenied = {
@@ -259,6 +264,11 @@ export const PageTitles = {
   "feedback": FeedbackPage.Title,
   "transfer application": RegulatorsTransferApplicationPage.Title,
   "Power BI Sign in": PowerBISignInPage.Title,
+  "ID of the organisation": RegulatorSearchPage.Title,
+  "Result": RegulatorSearchResultPage.Title,
+
+  
+  
 };
 
 export const PageTitlesWelsh = {

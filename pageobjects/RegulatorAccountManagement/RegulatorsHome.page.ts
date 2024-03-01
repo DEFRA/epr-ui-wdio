@@ -34,6 +34,9 @@ class RegulatorsHomePage extends BasePage {
     return $("*=Manage packaging");
   }
 
+  get lnkManageOrganisations() {
+    return $("#manageApprovedUsersLink")
+  }
   async GetNationHeader(expectedText: string) {
     return $(`h2*=${expectedText}`);
   }
