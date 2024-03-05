@@ -11,6 +11,7 @@ import {
   REGULATORS_ACCOUNT_MANAGE_PAGE,
   REGULATORS_APPLICATIONS_PAGE,
   ENV_CONFIG_FILE,
+  LARGE_PRODUCERS_PUBLIC_LIST,
 } from "../../config/pathconst.js";
 import CommonPage from "../../pageobjects/common.page.js";
 import { AccountCreationQuestions } from "../../utils/types/AccountCreation.types.js";
@@ -46,7 +47,7 @@ Given(/^init common scenario context/, async function (this: CustomWorld) {
 });
 
 Given(
-  /^the registered user is on the "(create account|report data|manage account|regulators home|regulators manage account|regulators application)" page$/,
+  /^the (?:registered )?user is on the "(create account|report data|manage account|regulators home|regulators manage account|regulators application|large producers public list)" page$/,
   async function (
     mainPage:
       | "create account"
@@ -55,6 +56,7 @@ Given(
       | "regulators home"
       | "regulators manage account"
       | "regulators application"
+      | "large producers public list"
   ) {
     switch (mainPage) {
       case "create account":
@@ -74,6 +76,9 @@ Given(
         break;
       case "regulators application":
         await basePage.open(REGULATORS_APPLICATIONS_PAGE);
+        break;
+      case "large producers public list":
+        await basePage.open(LARGE_PRODUCERS_PUBLIC_LIST);
         break;
     }
   }
@@ -285,34 +290,67 @@ Given(
 
 Given(
   /^cookies "(Accept|Reject)" button should display$/,
-  async function (acceptOrRejectCookies: "Accept" | "Reject") {
-    acceptOrRejectCookies == "Accept"
-      ? await expect(await basePage.btnAcceptCookies).toBeDisplayed()
-      : await expect(await basePage.btnRejectCookies).toBeDisplayed();
+  async function (
+    this: CustomWorld,
+    acceptOrRejectCookies: "Accept" | "Reject"
+  ) {
+    if (!this.isWelsh) {
+      acceptOrRejectCookies == "Accept"
+        ? await expect(await basePage.btnAcceptCookies).toBeDisplayed()
+        : await expect(await basePage.btnRejectCookies).toBeDisplayed();
+    } else {
+      acceptOrRejectCookies == "Accept"
+        ? await expect(await basePage.btnAcceptCookiesWelsh).toBeDisplayed()
+        : await expect(await basePage.btnRejectCookiesWelsh).toBeDisplayed();
+    }
   }
 );
 
 Given(
   /^cookies are "(Accepted|Rejected)"$/,
-  async function (acceptOrRejectCookies: "Accepted" | "Rejected") {
+  async function (
+    this: CustomWorld,
+    acceptOrRejectCookies: "Accepted" | "Rejected"
+  ) {
     cucumberJson.attach(await browser.takeScreenshot(), "image/png");
-    acceptOrRejectCookies == "Accepted"
-      ? (await basePage.btnAcceptCookies).click()
-      : (await basePage.btnRejectCookies).click();
+    if (!this.isWelsh) {
+      acceptOrRejectCookies == "Accepted"
+        ? (await basePage.btnAcceptCookies).click()
+        : (await basePage.btnRejectCookies).click();
+    } else {
+      acceptOrRejectCookies == "Accepted"
+        ? (await basePage.btnAcceptCookiesWelsh).click()
+        : (await basePage.btnRejectCookiesWelsh).click();
+    }
   }
 );
 
-Given(/^the Hide cookie message button should display$/, async function () {
-  await expect(await basePage.btnHideCookiesMessage).toBeDisplayed();
-});
+Given(
+  /^the Hide cookie message button should display$/,
+  async function (this: CustomWorld) {
+    if (!this.isWelsh) {
+      await expect(await basePage.btnHideCookiesMessage).toBeDisplayed();
+    } else {
+      await expect(await basePage.btnHideCookiesMessageWelsh).toBeDisplayed();
+    }
+  }
+);
 
-When(/^the Hide cookie message button is clicked$/, async function () {
-  await waitAndClick(await basePage.btnHideCookiesMessage);
-});
+When(
+  /^the Hide cookie message button is clicked$/,
+  async function (this: CustomWorld) {
+    if (!this.isWelsh) {
+      await waitAndClick(await basePage.btnHideCookiesMessage);
+    } else {
+      await waitAndClick(await basePage.btnHideCookiesMessageWelsh);
+    }
+  }
+);
 
 When(
   /^the user clicks on the "(Gov.uk|pEPR: Regulators Service|Cookies|View cookies|Privacy|Accessibility statement|Crown copyright|Open Government Licence|Feedback|log in to Power-BI)" link$/,
   async function (
+    this: CustomWorld,
     elementName:
       | "Gov.uk"
       | "pEPR: Regulators Service"
@@ -325,39 +363,49 @@ When(
       | "Feedback"
       | "log in to Power-BI"
   ) {
-    switch (elementName) {
-      case "Gov.uk":
-        await waitAndClick(await basePage.govUkLink);
-        break;
-      case "pEPR: Regulators Service":
-        await waitAndClick(await basePage.pEPRRegulatorsServiceLink);
-        break;
-      case "Cookies":
-        await waitAndClick(await basePage.lnkCookiesPolicy);
-        break;
-      case "View cookies":
-        await waitAndClick(await basePage.lnkViewCookies);
-        break;
-      case "Privacy":
-        await waitAndClick(await basePage.lnkPrivacyPolicy);
-        break;
-      case "Accessibility statement":
-        await waitAndClick(await basePage.accessibilityStatementLink);
-        break;
-      case "Crown copyright":
-        await waitAndClick(await basePage.crownCopyrightLink);
-        break;
-      case "Open Government Licence":
-        await waitAndClick(await basePage.openGovernmentLicenceLink);
-        break;
-      case "Feedback":
-        await waitAndClick(await basePage.feedbackLink);
-        break;
-      case "log in to Power-BI":
-        await waitAndClick(await basePage.lnkLogInToPowerBI);
-        break;
-      default:
-        throw new Error(`Unknown element name: ${elementName}`);
+    if (!this.isWelsh) {
+      switch (elementName) {
+        case "Gov.uk":
+          await waitAndClick(await basePage.govUkLink);
+          break;
+        case "pEPR: Regulators Service":
+          await waitAndClick(await basePage.pEPRRegulatorsServiceLink);
+          break;
+        case "Cookies":
+          await waitAndClick(await basePage.lnkCookiesPolicy);
+          break;
+        case "View cookies":
+          await waitAndClick(await basePage.lnkViewCookies);
+          break;
+        case "Privacy":
+          await waitAndClick(await basePage.lnkPrivacyPolicy);
+          break;
+        case "Accessibility statement":
+          await waitAndClick(await basePage.accessibilityStatementLink);
+          break;
+        case "Crown copyright":
+          await waitAndClick(await basePage.crownCopyrightLink);
+          break;
+        case "Open Government Licence":
+          await waitAndClick(await basePage.openGovernmentLicenceLink);
+          break;
+        case "Feedback":
+          await waitAndClick(await basePage.feedbackLink);
+          break;
+        case "log in to Power-BI":
+          await waitAndClick(await basePage.lnkLogInToPowerBI);
+          break;
+        default:
+          throw new Error(`Unknown element name: ${elementName}`);
+      }
+    } else {
+      switch (elementName) {
+        case "View cookies":
+          await waitAndClick(await basePage.lnkViewCookiesWelsh);
+          break;
+        default:
+          throw new Error(`Unknown element name: ${elementName}`);
+      }
     }
   }
 );
@@ -553,6 +601,7 @@ Then(
 Then(
   /^the "(Gov.uk|pEPR: Regulators Service|Cookies|View cookies|Privacy|Accessibility statement|Crown copyright|Open Government Licence|Feedback|View on Companies House register)" link should be displayed$/,
   async function (
+    this: CustomWorld,
     elementName:
       | "Gov.uk"
       | "pEPR: Regulators Service"
@@ -565,41 +614,57 @@ Then(
       | "Feedback"
       | "View on Companies House register"
   ) {
-    switch (elementName) {
-      case "Gov.uk":
-        await expect(await basePage.govUkLink).toBeDisplayed();
-        break;
-      case "pEPR: Regulators Service":
-        await expect(await basePage.pEPRRegulatorsServiceLink).toBeDisplayed();
-        break;
-      case "Cookies":
-        await expect(await basePage.lnkCookiesPolicy).toBeDisplayed();
-        break;
-      case "View cookies":
-        await expect(await basePage.lnkViewCookies).toBeDisplayed();
-        break;
-      case "Privacy":
-        await expect(await basePage.lnkPrivacyPolicy).toBeDisplayed();
-        break;
-      case "Accessibility statement":
-        await expect(await basePage.accessibilityStatementLink).toBeDisplayed();
-        break;
-      case "Crown copyright":
-        await expect(await basePage.crownCopyrightLink).toBeDisplayed();
-        break;
-      case "Open Government Licence":
-        await expect(await basePage.openGovernmentLicenceLink).toBeDisplayed();
-        break;
-      case "Feedback":
-        await expect(await basePage.feedbackLink).toBeDisplayed();
-        break;
-      case "View on Companies House register":
-        await expect(
-          await RegulatorEnrolmentDetailsPage.companiesHouseRegisterLink
-        ).toBeDisplayed();
-        break;
-      default:
-        throw new Error(`Unknown element name: ${elementName}`);
+    if (!this.isWelsh) {
+      switch (elementName) {
+        case "Gov.uk":
+          await expect(await basePage.govUkLink).toBeDisplayed();
+          break;
+        case "pEPR: Regulators Service":
+          await expect(
+            await basePage.pEPRRegulatorsServiceLink
+          ).toBeDisplayed();
+          break;
+        case "Cookies":
+          await expect(await basePage.lnkCookiesPolicy).toBeDisplayed();
+          break;
+        case "View cookies":
+          await expect(await basePage.lnkViewCookies).toBeDisplayed();
+          break;
+        case "Privacy":
+          await expect(await basePage.lnkPrivacyPolicy).toBeDisplayed();
+          break;
+        case "Accessibility statement":
+          await expect(
+            await basePage.accessibilityStatementLink
+          ).toBeDisplayed();
+          break;
+        case "Crown copyright":
+          await expect(await basePage.crownCopyrightLink).toBeDisplayed();
+          break;
+        case "Open Government Licence":
+          await expect(
+            await basePage.openGovernmentLicenceLink
+          ).toBeDisplayed();
+          break;
+        case "Feedback":
+          await expect(await basePage.feedbackLink).toBeDisplayed();
+          break;
+        case "View on Companies House register":
+          await expect(
+            await RegulatorEnrolmentDetailsPage.companiesHouseRegisterLink
+          ).toBeDisplayed();
+          break;
+        default:
+          throw new Error(`Unknown element name: ${elementName}`);
+      }
+    } else {
+      switch (elementName) {
+        case "View cookies":
+          await expect(await basePage.lnkViewCookiesWelsh).toBeDisplayed();
+          break;
+        default:
+          throw new Error(`Unknown element name: ${elementName}`);
+      }
     }
   }
 );
@@ -692,6 +757,10 @@ Then(
   }
 );
 
+Then(/^cookies cleared from browser$/, async function () {
+  await browser.deleteAllCookies();
+});
+
 When(
     /^the user enter search query: "(.*)"$/,
     async function (searchQuery: string) {
@@ -699,4 +768,3 @@ When(
       await basePage.enterSearchQuery(searchQuery);
     }
 );
-

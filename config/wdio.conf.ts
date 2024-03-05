@@ -93,20 +93,48 @@ export const config: Options.Testrunner = {
       "./../features/Regulator_Account_Management/*.feature",
     ],
     Welsh_Translation: ["./../features/Welsh_Translation/**/*.feature"],
-    Welsh_Translation_Account_Creation: ["./../features/Welsh_Translation/Account_Creation/*.feature"],
-    Welsh_Translation_CS_Dissociates_From_Producer: ["./../features/Welsh_Translation/CS_Dissociates_From_Producer/*.feature"],
-    Welsh_Translation_Manage_Account: ["./../features/Welsh_Translation/Manage_Account/*.feature"],
-    Welsh_Translation_Report_Data: ["./../features/Welsh_Translation/Report_Data/*.feature"],
-    Regulator_Response_Applications: ["./../features/Regulator_Response/Applications/*.feature"],
-    Regulator_Response_PoM_Submission: ["./../features/Regulator_Response/PoMSubmission/*.feature"],
-    RegulatorResponseDB: ["./../features/Regulator_Response/DatabaseConnection.feature"],
+    Welsh_Translation_Account_Creation: [
+      "./../features/Welsh_Translation/Account_Creation/*.feature",
+    ],
+    Welsh_Translation_CS_Dissociates_From_Producer: [
+      "./../features/Welsh_Translation/CS_Dissociates_From_Producer/*.feature",
+    ],
+    Welsh_Translation_Manage_Account: [
+      "./../features/Welsh_Translation/Manage_Account/*.feature",
+    ],
+    Welsh_Translation_Report_Data: [
+      "./../features/Welsh_Translation/Report_Data/*.feature",
+    ],
+    Welsh_Translation_Large_Producers: [
+      "./../features/Welsh_Translation/Large_Producers_Public_List/LargeProducersPublicList.feature",
+    ],
+    Regulator_Response_Applications: [
+      "./../features/Regulator_Response/Applications/*.feature",
+    ],
+    Regulator_Response_PoM_Submission: [
+      "./../features/Regulator_Response/PoMSubmission/*.feature",
+    ],
+    RegulatorResponseDB: [
+      "./../features/Regulator_Response/DatabaseConnection.feature",
+    ],
     E2E_CS: ["./../features/End_to_End_Tests/**/*.feature"],
     E2E_Ltd: ["./../features/End_to_End_Tests/**/LimitedCompanyE2E.feature"],
-    E2E_Non_Ltd: ["./../features/End_to_End_Tests/**/NonLimitedCompanyE2E.feature"],
-    Regulator_Manage_Org_And_Apr_Person: ["./../features/Regulator_Manage_Org_And_Apr_Person/*.feature"],
+    E2E_Non_Ltd: [
+      "./../features/End_to_End_Tests/**/NonLimitedCompanyE2E.feature",
+    ],
+    Regulator_Manage_Org_And_Apr_Person: [
+      "./../features/Regulator_Manage_Org_And_Apr_Person/*.feature",
+    ],
     SeedDev3Database: ["./../features/SeedDatabase/*.feature"],
-    RollbackDev2Database: ["./../features/RollbackDatabase/RollbackDev2Database.feature"],
-    RollbackDev3Database: ["./../features/RollbackDatabase/RollbackDev3Database.feature"]
+    RollbackDev2Database: [
+      "./../features/RollbackDatabase/RollbackDev2Database.feature",
+    ],
+    RollbackDev3Database: [
+      "./../features/RollbackDatabase/RollbackDev3Database.feature",
+    ],
+    Large_Producers_Public_List: [
+      "./../features/Large_Producers_Public_List/LargeProducersPublicList.feature",
+    ],
   },
   //
   // ============

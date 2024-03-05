@@ -2,7 +2,7 @@ import CookiesPolicyBasePage from "./CookiesPolicyBase.page.js";
 
 class SharedCookiesPolicyPage extends CookiesPolicyBasePage {
   get Url() {
-    return "/report-data/cookies";
+    return "/cookies";
   }
 
   get Title() {

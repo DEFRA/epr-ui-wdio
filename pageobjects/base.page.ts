@@ -54,7 +54,7 @@ export default class BasePage {
   get feedbackLink() {
     return $("*=feedback");
   }
-  get lnkLogInToPowerBI(){
+  get lnkLogInToPowerBI() {
     return $("*=log in to Power BI");
   }
 
@@ -70,16 +70,32 @@ export default class BasePage {
     return $("button*=Accept analytics cookies");
   }
 
+  get btnAcceptCookiesWelsh() {
+    return $("button*=Derbyn cwcis dadansoddeg");
+  }
+
   get btnRejectCookies() {
     return $("button*=Reject analytics cookies");
+  }
+
+  get btnRejectCookiesWelsh() {
+    return $("button*=Gwrthod cwcis dadansoddeg");
   }
 
   get lnkViewCookies() {
     return $("=View cookies");
   }
 
+  get lnkViewCookiesWelsh() {
+    return $("=Gweld cwcis");
+  }
+
   get btnHideCookiesMessage() {
     return $("button*=Hide cookie message");
+  }
+
+  get btnHideCookiesMessageWelsh() {
+    return $("button*=Cuddio’r neges ynghylch cwcis");
   }
 
   get lnkAddTeamMember() {
@@ -176,8 +192,8 @@ export default class BasePage {
     } else {
       await (await this.lnkSignOutEnglish).click();
     }
-      await browser.reloadSession();
-      await browser.maximizeWindow();
+    await browser.reloadSession();
+    await browser.maximizeWindow();
   }
 
   async clickContinue(isWelsh: boolean) {
@@ -201,8 +217,8 @@ export default class BasePage {
    const errorMessageText = await errorMessageElement.getText()
    const shouldTrim = await errorMessageElement.getTagName()==='p'
    return shouldTrim ? errorMessageText.split(':')[1].trim() : errorMessageText;
-   }
- 
+  }
+
   async PageH1Header() {
     return (await this.txtPageH1Header).getText();
   }

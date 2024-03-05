@@ -8,6 +8,7 @@ export const MANAGE_ACCOUNT_BASE_PAGE = "/manage-account/manage";
 export const REGULATORS_HOME_PAGE = "/regulators/home";
 export const REGULATORS_ACCOUNT_MANAGE_PAGE = "/regulators/manage-account";
 export const REGULATORS_APPLICATIONS_PAGE ="/regulators/applications";
+export const LARGE_PRODUCERS_PUBLIC_LIST="/large-producers";
 
 export const POM_DATA_ERROR_REPORTS_PATH = path.join(
   process.cwd(),

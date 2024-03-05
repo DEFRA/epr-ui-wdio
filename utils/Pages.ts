@@ -90,6 +90,10 @@ import ConfirmRemovalPage from "../pageobjects/CSDissociatesFromProducer/Confirm
 import ConfirmationOfRemovalPage from "../pageobjects/CSDissociatesFromProducer/ConfirmationOfRemoval.page.js";
 import PoMCSVExample from "../pageobjects/LandingPages/PoMCSVExample.page.js";
 import PoMGOVUKGuidance from "../pageobjects/LandingPages/PoMGOVUKGuidance.page.js";
+import LargeProducersPublicListPage from "../pageobjects/LargeProducersPublicList/LargeProducersPublicList.page.js";
+import LargeProducersAccessibilityPage from "../pageobjects/LargeProducersPublicList/LargeProducersAccessibility.page.js";
+import LargeProducersCookiesPage from "../pageobjects/LargeProducersPublicList/LargeProducersCookies.page.js";
+import LargeProducersPrivacyPage from "../pageobjects/LargeProducersPublicList/LargeProducersPrivacy.page.js";
 
 const LandingPages = {
   "direct producer landing": DirectProducerLandingPage.Url,
@@ -205,6 +209,13 @@ const RegulatorPages = {
   "Regulators search result": RegulatorSearchResultPage.Url,
 };
 
+const LargeProducersPublicListPages = {
+  "public list of large producers": LargeProducersPublicListPage.Url,
+  "Cookies of Large Producers": LargeProducersCookiesPage.Url,
+  "Privacy of Large Producers": LargeProducersPrivacyPage.Url,
+  "Accessibility of Large Producers": LargeProducersAccessibilityPage.Url,
+};
+
 const AccessDenied = {
   "access Denied": AccessDeniedPage.Url,
 };
@@ -250,6 +261,7 @@ export const Pages = {
   ...Feedback,
   ...RegulatorSignOut,
   ...CSDissociatesPages,
+  ...LargeProducersPublicListPages,
 } as const;
 
 export const PageTitles = {
