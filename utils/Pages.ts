@@ -80,6 +80,17 @@ import RegulatorAcceptSubmissionPage from "../pageobjects/RegulatorAccountManage
 import RegulatorRejectSubmissionPage from "../pageobjects/RegulatorAccountManagement/RegulatorRejectSubmission.page.js";
 import RegulatorSearchPage from "../pageobjects/RegulatorAccountManagement/RegulatorSearch.page.js";
 import RegulatorSearchResultPage from "../pageobjects/RegulatorAccountManagement/RegulatorSearchResult.page.js";
+ import RegulatorOrganisationDetailsPage from "../pageobjects/RegulatorAccountManagement/RegulatorOrganisationDetails.page.js";
+ import RegulatorConfirmRemoveUserPage from "../pageobjects/RegulatorAccountManagement/RegulatorConfirmRemoveUser.page.js";
+ import RegulatorApproveConfirmationPage from "../pageobjects/RegulatorAccountManagement/RegulatorApproveConfirmation.page.js";
+ import RegulatorApprovePersonListPage from "../pageobjects/RegulatorAccountManagement/RegulatorApprovePersonList.page.js";
+ import RegulatorNewApprovedPersonNamePage from "../pageobjects/RegulatorAccountManagement/RegulatorNewApprovedPersonName.page.js";
+ import RegulatorNewApprovedPersonEmailPage from "../pageobjects/RegulatorAccountManagement/RegulatorNewApprovedPersonEmail.page.js";
+// import RegulatorSuccessPage from "../pageobjects/RegulatorAccountManagement/RegulatorSuccess.page.js";
+
+
+
+
 
 import PowerBISignInPage from "../pageobjects/PowerBISignIn.page.js";
 import SchemeMembersPage from "../pageobjects/CSDissociatesFromProducer/SchemeMembers.page.js";
@@ -94,6 +105,7 @@ import LargeProducersPublicListPage from "../pageobjects/LargeProducersPublicLis
 import LargeProducersAccessibilityPage from "../pageobjects/LargeProducersPublicList/LargeProducersAccessibility.page.js";
 import LargeProducersCookiesPage from "../pageobjects/LargeProducersPublicList/LargeProducersCookies.page.js";
 import LargeProducersPrivacyPage from "../pageobjects/LargeProducersPublicList/LargeProducersPrivacy.page.js";
+import RegulatorSuccessPage from "../pageobjects/RegulatorAccountManagement/RegulatorSuccess.page.js";
 
 const LandingPages = {
   "direct producer landing": DirectProducerLandingPage.Url,
@@ -206,7 +218,14 @@ const RegulatorPages = {
   "regulators accept submission": RegulatorAcceptSubmissionPage.Url,
   "regulators reject submission": RegulatorRejectSubmissionPage.Url,
   "regulator search": RegulatorSearchPage.Url,
-  "Regulators search result": RegulatorSearchResultPage.Url,
+  "regulator search result": RegulatorSearchResultPage.Url,
+   "regulator organisation details": RegulatorOrganisationDetailsPage.Url,
+   "regulator confirm remove user": RegulatorConfirmRemoveUserPage.Url,
+   "regulator approve confirmation": RegulatorApproveConfirmationPage.Url,
+   "regulator approve person list": RegulatorApprovePersonListPage.Url,
+    "regulator new approved person name": RegulatorNewApprovedPersonNamePage.Url,
+    "regulator new approved person email": RegulatorNewApprovedPersonEmailPage.Url,
+   "regulator success page": RegulatorSuccessPage.Url,
 };
 
 const LargeProducersPublicListPages = {

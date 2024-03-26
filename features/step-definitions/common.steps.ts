@@ -27,10 +27,12 @@ import commonPage from "../../pageobjects/common.page.js";
 import RegulatorEnrolmentDetailsPage from "../../pageobjects/RegulatorAccountManagement/RegulatorEnrolmentDetails.page.js";
 import DatabaseConnection from "../../utils/Database/DatabaseConnection.js";
 import { GetSecretClient, getSecret } from "../../utils/LoginConf.js";
+import { AddNewApprovedPersonQuestions } from "../../utils/types/Regulator.types.js";
 
 const basePage = new BasePage();
 
 Given(/^init common scenario context/, async function (this: CustomWorld) {
+
   const keyVaultUrl = process.argv[process.argv.indexOf("-secrets") + 1];
   this.secretClient = await GetSecretClient(keyVaultUrl);
 

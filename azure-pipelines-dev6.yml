@@ -37,7 +37,7 @@ steps:
     scriptLocation: inlineScript 
     inlineScript: |
       npm install
-      npx wdio ./config/wdio.azure.dev6.conf.ts --suite Regulator_Account_Management -secrets $(keyVaultUrlDev)
+      npx wdio ./config/wdio.azure.dev6.conf.ts --suite Regulator_Account_Management Regulator_Manage_Org_And_Apr_Person -secrets $(keyVaultUrlDev)
   displayName: 'npm install and run tests'
 
 - task: PublishCucumberReport@1

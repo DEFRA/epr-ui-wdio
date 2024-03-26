@@ -6,6 +6,7 @@ import { PoMDataUploadContextElems } from "./types/DataUpload.types";
 import { Environment } from "../utils/types/Environment.types";
 import { Cookie } from "@wdio/protocols";
 import { SecretClient } from "@azure/keyvault-secrets";
+import { AddNewApprovedPersonQuestions } from "./types/Regulator.types";
 
 export default class CustomWorld extends World {
   scenarioDataAccCreation: Map<AccountCreationQuestions, string>;
@@ -14,6 +15,7 @@ export default class CustomWorld extends World {
   scenarioDataAccManagement: Map<DelegatedUserQuestions, string>;
   scenarioDataFilterAppications: Map<string, number>;
   scenarioDataCSDissociatesFromProducers: Number;
+  scenarioAddNewApprovedPerson: Map<AddNewApprovedPersonQuestions, string>;
   environment: Environment;
   isMobile: boolean;
   cookies: Map<string, Cookie>;

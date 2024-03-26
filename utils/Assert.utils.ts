@@ -15,6 +15,8 @@ import {
 import cucumberJson from "wdio-cucumberjs-json-reporter";
 import { ElementArray } from "webdriverio";
 import PrivacyPolicyBasePage from "../pageobjects/PrivacyAndCookies/PrivacyPolicyBase.page.js";
+import { AddNewApprovedPersonQuestions } from "./types/Regulator.types.js";
+import RegulatorCheckYourDetailsPage from "../pageobjects/RegulatorAccountManagement/RegulatorCheckYourDetails.page.js";
 const privacyPolicyBasePage = new PrivacyPolicyBasePage();
 
 export default class AssertPageUtils {
@@ -23,7 +25,8 @@ export default class AssertPageUtils {
     scenarioData: Map<string, string>
   ) {
     console.log(question);
-    const expectedValue = scenarioData.get(question);
+    var expectedValue = scenarioData.get(question);
+
     if (expectedValue) {
       const actualValue = await CheckYourDetailsPage.GetAnswerFor(question);
       console.log(`ACT: ${actualValue}`);
@@ -145,6 +148,23 @@ export default class AssertPageUtils {
       PrivacyPolicy.Section13
     );
   }
+
+  static async AssertRegulatorCheckYourDetailsPageValue(
+    question: AddNewApprovedPersonQuestions,
+    scenarioData: Map<string, string>
+  ) {
+    console.log(question);
+    let expectedValue = scenarioData.get(question);
+
+    if (expectedValue == "true") { expectedValue = "Yes"; }
+    if (expectedValue) {
+      const actualValue = await RegulatorCheckYourDetailsPage.GetAnswerFor(question);
+      console.log(`ACT: ${actualValue}`);
+      console.log(`EXP: ${expectedValue}`);
+      await expect(actualValue).toEqual(expectedValue);
+    }
+  }
+
 
   private static async AssertPrivacyPolicyPageHeader(
     actualHeader: WebdriverIO.Element,
