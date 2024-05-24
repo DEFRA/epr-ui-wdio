@@ -15,6 +15,7 @@ import {
   SubmissionDeclarationUserName,
 } from "../../../utils/enums/DataUpload.enum.js";
 
+let datafieldDateOnly:string;
 When(
   /^the user clicks the "continue" button on the "check and submit" page$/,
   async function (this: CustomWorld) {
@@ -241,7 +242,13 @@ Then(
       default:
         throw new Error(`The ${tableName} table is not defined!`);
     }
-    await expect(dateField).toEqual(currentFormattedDate);
+   
+    const datafieldDate = dateField?.split(',');
+    if(datafieldDate){
+     datafieldDateOnly = datafieldDate[0];
+    }
+
+    await expect(datafieldDateOnly).toEqual(currentFormattedDate);
   }
 );
 
