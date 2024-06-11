@@ -770,3 +770,22 @@ When(
       await basePage.enterSearchQuery(searchQuery);
     }
 );
+
+Then(/^the user should see "Get help" details in the footer$/,async function() {
+
+//check "Get help" header  
+await expect(basePage.getHelpHeader).toBeDisplayed()
+await expect(basePage.getHelpHeader).toHaveText('Get help')
+
+// check email Link
+await expect(basePage.emailLink).toBeDisplayed();
+await expect(basePage.emailLink).toHaveText('eprcustomerservice@defra.gov.uk')
+
+// check phone number
+await expect(basePage.phoneNumber).toBeDisplayed();
+await expect(basePage.phoneNumber).toHaveText('Telephone: 0300 060 0002')
+
+// check opening times
+await expect(basePage.openingTimes).toBeDisplayed();
+await expect(basePage.openingTimes).toHaveText('Monday to Friday, 8:30am to 4:30pm')
+})

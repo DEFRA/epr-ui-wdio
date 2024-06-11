@@ -11,6 +11,22 @@ export default class BasePage {
     return $("*=Cymraeg");
   }
 
+  get getHelpHeader() {
+    return $("footer div.govuk-footer__meta-item--grow h2.govuk-heading-m");
+  }
+
+  get emailLink() {
+    return $('footer div.govuk-footer__meta-item--grow a[href="mailto:eprcustomerservice@defra.gov.uk"]');
+  }
+  
+  get phoneNumber() {
+    return $("footer div.govuk-footer__meta-item--grow p.govuk-body:nth-of-type(2)")
+  }
+
+  get openingTimes() {
+    return $("footer div.govuk-footer__meta-item--grow p.govuk-body:nth-of-type(3)");
+  }
+
   get lnkPrivacyPolicy() {
     return $("*=Privacy");
   }
