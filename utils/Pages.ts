@@ -107,6 +107,7 @@ import LargeProducersCookiesPage from "../pageobjects/LargeProducersPublicList/L
 import LargeProducersPrivacyPage from "../pageobjects/LargeProducersPublicList/LargeProducersPrivacy.page.js";
 import RegulatorSuccessPage from "../pageobjects/RegulatorAccountManagement/RegulatorSuccess.page.js";
 
+
 const LandingPages = {
   "direct producer landing": DirectProducerLandingPage.Url,
   "manage compliance scheme": IndirectProducerLandingPage.Url,
@@ -119,9 +120,14 @@ const LandingPages = {
   "add compliance scheme": AddCSPage.Url,
   "select compliance scheme": ListOfCSPage.Url,
   "shared privacy policy": SharedPrivacyPolicyPage.Url,
-  "shared cookies policy": SharedCookiesPolicyPage.Url,
+    "shared cookies policy": SharedCookiesPolicyPage.Url,
   "regulators privacy policy": RegulatorsPrivacyPolicyPage.Url,
   "regulators cookies policy": RegulatorsCookiesPolicyPage.Url,
+  "RPD PROD cookies policy (English)": SharedCookiesPolicyPage.RPDProdURL_English,
+  "GOV.UK PROD privacy policy (English)": SharedPrivacyPolicyPage.PRODUrl_English,
+  "GOV.UK PROD Accessibility Statement (English)": AccessibilityStatementPage.PRODUrl_English,
+  "GOV.UK PROD privacy policy (Welsh)": SharedPrivacyPolicyPage.PRODUrl_Welsh,
+  "GOV.UK PROD Accessibility Statement (Welsh)": AccessibilityStatementPage.PRODUrl_Welsh,
 };
 
 const PoMDataUploadPages = {
@@ -189,6 +195,7 @@ const OpenGovLicence = {
 
 const AccessibilityStatement = {
   "Open Government Licence": OpenGovLicencePage.Url,
+  "Accessibility statement": AccessibilityStatementPage.Url,
 };
 
 const Feedback = {

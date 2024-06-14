@@ -61,3 +61,10 @@ Feature: Shared Cookies policy functionality
         Then there should be a cookie created with name: ".epr_cookies_policy"
         And cookie with name: ".epr_cookies_policy" should have value: "False"
         And there should not be a cookie created with name: ".epr_cookie_policy"
+
+
+Scenario: Navigate to Cookies page from B2C Screen (opened in New Tab)
+        And the registered user is on the "report data" page
+        Then the "Cookies" link should be displayed
+        When the user clicks on the "Cookies" link
+        Then the user should be on the "RPD PROD cookies policy (English)" page in new Tab

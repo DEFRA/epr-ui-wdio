@@ -39,3 +39,10 @@ Feature: Shared Privacy policy functionality
         Then the back link should be displayed
         When the user clicks the back link
         Then the user should be on the "manage account" page
+
+
+    Scenario: Navigate to shared Privacy Policy from B2C Screen (Opened in new Tab)
+        And the registered user is on the "report data" page
+        Then the "Privacy" link should be displayed
+        When the user clicks on the "Privacy" link
+        Then the user should be on the "GOV.UK PROD privacy policy (English)" page in new Tab

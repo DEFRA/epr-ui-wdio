@@ -555,7 +555,22 @@ Then(
     if (!pageElem) {
       throw new Error(`The page ${pageName} is not defined!`);
     }
+    
+    await expect(browser).toHaveUrlContaining(pageElem);
+    await CommonPage.takeScreenshot();
+  }
+);
 
+Then(
+  /^the user should be on the "(.*)" page in new Tab$/,
+  async function (pageName: string) {
+    await waitUntilPageLoads();
+    const pageElem = Pages[pageName];
+    if (!pageElem) {
+      throw new Error(`The page ${pageName} is not defined!`);
+    }
+
+    await browser.switchWindow(pageElem)
     await expect(browser).toHaveUrlContaining(pageElem);
     await CommonPage.takeScreenshot();
   }
