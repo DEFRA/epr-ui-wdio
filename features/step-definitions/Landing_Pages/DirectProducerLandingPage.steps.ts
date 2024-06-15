@@ -174,12 +174,12 @@ Then(
 );
 
 Then(
-  /^the "(Report organisation details|Report packaging data|Waste management fee|Packaging waste recovery notes)" card should display on the direct producer landing page$/,
+  /^the "(Organisation details|Packaging data|Waste management fee|Packaging waste recovery notes)" card should display on the direct producer landing page$/,
   async function (cardName: LandingPageCards) {
     let cardTitle: WebdriverIO.Element;
     switch (cardName) {
-      case "Report organisation details":
-      case "Report packaging data":
+      case "Organisation details":
+      case "Packaging data":
         cardTitle = await CommonLandingPage.getSubmissionCard(cardName);
         break;
       case "Waste management fee":

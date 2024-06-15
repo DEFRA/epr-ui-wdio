@@ -52,7 +52,7 @@ Given(
 );
 
 When(
-  /^the user selects the "Report packaging data" card as "(Compliance Scheme|Producer)"$/,
+  /^the user selects the "Packaging data" card as "(Compliance Scheme|Producer)"$/,
   async function (userType: "Compliance Scheme" | "Producer") {
     await waitAndClick(await CommonDataUploadPage.lnkReportPackagingData);
   }
@@ -97,9 +97,11 @@ When(
         case "CSSmallInvalidFile":
         case "CSSmallValidFile":
         case "CSValidDataUpload":
+          const comSchId = await getSecret(this.secretClient, process.env.COMPLIANCE_SCHEME_ORGANISATION_ID as string);
+          if(comSchId)
           await replaceTestDataPlaceholderWithOrganisationId(
             fileName,
-            await getSecret(this.secretClient, process.env.COMPLIANCE_SCHEME_ORGANISATION_ID as string)
+            comSchId
           );
           break;
         default:
@@ -191,9 +193,11 @@ When(
         case "CSSmallInvalidFile":
         case "CSSmallValidFile":
         case "CSValidDataUpload":
+          const compSchId = await getSecret(this.secretClient, process.env.COMPLIANCE_SCHEME_ORGANISATION_ID as string);
+          if(compSchId)
           await replaceTestDataOrganisationIdWithPlaceholder(
             fileName,
-            await getSecret(this.secretClient, process.env.COMPLIANCE_SCHEME_ORGANISATION_ID as string)
+            compSchId
           );
           break;
         default:
@@ -421,9 +425,11 @@ Then(
         this.scenarioDataLandingPgs.get("organisationId") as string
       );
     } else if (userType === "Compliance Scheme") {
+      const compSchId = await getSecret(this.secretClient, process.env.COMPLIANCE_SCHEME_ORGANISATION_ID as string);
+      if(compSchId)
       await replaceExistReportPlaceholderWithOrganisationId(
         fileName,
-        await getSecret(this.secretClient, process.env.COMPLIANCE_SCHEME_ORGANISATION_ID as string)
+        compSchId
       );
     }
 
@@ -437,9 +443,11 @@ Then(
         this.scenarioDataLandingPgs.get("organisationId") as string
       );
     } else if (userType === "Compliance Scheme") {
+      const compSchId = await getSecret(this.secretClient, process.env.COMPLIANCE_SCHEME_ORGANISATION_ID as string);
+      if(compSchId)
       await replaceExistReportOrganisationIdWithPlaceholder(
         fileName,
-        await getSecret(this.secretClient, process.env.COMPLIANCE_SCHEME_ORGANISATION_ID as string)
+        compSchId
       );
     }
   }

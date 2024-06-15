@@ -2,12 +2,12 @@ import BasePage from "../base.page.js";
 
 class CommonDataUploadPage extends BasePage {
   get lnkReportOrganisationDetailsAsProducer() {
-    return $("=Report organisation details");
+    return $("=Organisation details");
     // return $('[data-testid="report-organisation-details-link"]');
   }
 
   get lnkReportOrganisationDetailsAsCS() {
-    return $("=Report your members’ organisation details");
+    return $("=Members’ organisation details");
   }
 
   get lnkReportPackagingData() {
@@ -52,7 +52,7 @@ class CommonDataUploadPage extends BasePage {
   }
 
   get btnContinue2() {
-    return $("a=Continue");
+    return $("a[class='govuk-button']");
     // return $('[data-testid="continue-button"]');
   }
 

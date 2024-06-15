@@ -234,7 +234,7 @@ Then(
 );
 
 Then(
-  /^the "(Report your members’ organisation details|Report your members’ packaging data)" card should display on the home compliance scheme page$/,
+  /^the "(Members’ organisation details|Members’ packaging data)" card should display on the home compliance scheme page$/,
   async function (cardName: LandingPageCards) {
     var actualCard = await CommonLandingPage.getSubmissionCard(cardName);
     await expect(actualCard).toBeDisplayed();

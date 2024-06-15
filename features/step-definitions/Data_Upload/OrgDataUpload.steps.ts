@@ -35,7 +35,7 @@ import PartnerDataUploadPage from "../../../pageobjects/DataUpload/Org_Data_Uplo
 import CustomWorld from "../../../utils/CustomWorld.js";
 
 When(
-  /^the user selects the "Report organisation details" card as "(Compliance Scheme|Producer)"$/,
+  /^the user selects the "Organisation details" card as "(Compliance Scheme|Producer)"$/,
   async function (userType: "Compliance Scheme" | "Producer") {
     switch (userType) {
       case "Producer":

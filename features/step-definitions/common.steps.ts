@@ -551,6 +551,7 @@ Then(
   /^the user should be on the "(.*)" page$/,
   async function (pageName: string) {
     await waitUntilPageLoads();
+    await waitUntilPageLoads();
     const pageElem = Pages[pageName];
     if (!pageElem) {
       throw new Error(`The page ${pageName} is not defined!`);
@@ -786,7 +787,7 @@ When(
     }
 );
 
-Then(/^the user should see "Get help" details in the footer$/,async function() {
+Then(/^the user should see "Get help" details in the "(.*)" footer$/,async function(context) {
 
 //check "Get help" header  
 await expect(basePage.getHelpHeader).toBeDisplayed()
@@ -797,10 +798,13 @@ await expect(basePage.emailLink).toBeDisplayed();
 await expect(basePage.emailLink).toHaveText('eprcustomerservice@defra.gov.uk')
 
 // check phone number
-await expect(basePage.phoneNumber).toBeDisplayed();
-await expect(basePage.phoneNumber).toHaveText('Telephone: 0300 060 0002')
+
+const tag = context.includes('create account') ||  context.includes('regulators home') ?'li' : 'p'
+  await expect(basePage.phoneNumber(tag)).toBeDisplayed();
+  await expect(basePage.phoneNumber(tag)).toHaveText('Telephone: 0300 060 0002')
 
 // check opening times
-await expect(basePage.openingTimes).toBeDisplayed();
-await expect(basePage.openingTimes).toHaveText('Monday to Friday, 8:30am to 4:30pm')
+
+await expect(basePage.openingTimes(tag)).toBeDisplayed();
+await expect(basePage.openingTimes(tag)).toHaveText('Monday to Friday, 8:30am to 4:30pm')
 })

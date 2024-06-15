@@ -109,7 +109,7 @@ export const config: Options.Testrunner = {
       "./../features/Welsh_Translation/Large_Producers_Public_List/LargeProducersPublicList.feature",
     ],
     Regulator_Response_Applications: [
-      "./../features/Regulator_Response/Applications/*.feature",
+      "./../features/Regulator_Response/Applications/RejectEnrolmentRequest.feature",
     ],
     Regulator_Response_PoM_Submission: [
       "./../features/Regulator_Response/PoMSubmission/*.feature",

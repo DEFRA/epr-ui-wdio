@@ -13,8 +13,8 @@ Feature: Direct Producer Landing page functionality - Delegated Person
     Scenario: Landing page for the Direct Producer
         Then the organisation id should be displayed on Direct producer Landing Page
         And the button "add a compliance scheme to your account" should be displayed
-        And the "Report organisation details" card should display on the direct producer landing page
-        And the "Report packaging data" card should display on the direct producer landing page
+        And the "Organisation details" card should display on the direct producer landing page
+        And the "Packaging data" card should display on the direct producer landing page
         And the "Waste management fee" card should display on the direct producer landing page
         And the "Packaging waste recovery notes" card should display on the direct producer landing page
 

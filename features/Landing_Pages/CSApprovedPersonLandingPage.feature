@@ -11,22 +11,22 @@ Feature: CS Landing page functionality - Approved Person
         Then the user should be on the "home compliance scheme" page
 
     Scenario: Landing page for CS Member
-        Then the "Report your members’ organisation details" card should display on the home compliance scheme page
-        And the "Report your members’ packaging data" card should display on the home compliance scheme page
+        Then the "Members’ organisation details" card should display on the home compliance scheme page
+        And the "Members’ packaging data" card should display on the home compliance scheme page
         # When the user clicks the "What do I report" panel on the home compliance scheme page
         # Then the expected support text should display on the home compliance scheme page
         When the user clicks on an inactive Compliance Scheme tab on the home compliance scheme page
         Then the old inactive tab becomes active
 
     Scenario: Landing page for CS Member - Organisation details sub-landing page
-        When the user selects the "Report organisation details" card as "Compliance Scheme"
+        When the user selects the "Organisation details" card as "Compliance Scheme"
         Then the user should be on the "organisation details sub landing" page
         And cards for different submission periods should be displayed
         When the user opens the "Organisation details Guidance" on the report members organisation details page
         Then the "Organisation details Guidance" page should display in a new tab
 
     Scenario: Landing page for CS Member - Packaging data sub-landing page
-        When the user selects the "Report packaging data" card as "Compliance Scheme"
+        When the user selects the "Packaging data" card as "Compliance Scheme"
         Then the user should be on the "packaging data sub landing" page
         And the content should be correct on the "packaging data sub landing" page
         And cards for different submission periods should be displayed

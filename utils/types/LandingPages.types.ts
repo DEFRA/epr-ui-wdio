@@ -9,10 +9,10 @@ export type PoMDataDocumentsLinks =
 export type DocumentsLinks = OrgDetailsDocumentsLinks | PoMDataDocumentsLinks;
 
 export type LandingPageCards =
-  | "Report your members’ organisation details"
-  | "Report your members’ packaging data"
-  | "Report organisation details"
-  | "Report packaging data"
+  | "Members’ organisation details"
+  | "Members’ packaging data"
+  | "Organisation details"
+  | "Packaging data"
   | "Waste management fee"
   | "Packaging waste recovery notes";
 
