@@ -9,7 +9,20 @@ export const config: Options.Testrunner = {
       // capabilities for local browser web tests
       browserName: "chrome", // or "firefox", "microsoftedge", "safari"]
       "goog:chromeOptions": {
-        args: ["--headless"],
+        args: [
+                "--headless",
+                "--proxy-server='direct://'",
+                '--proxy-bypass-list=*',
+                '--disable-gpu',
+                '--disable-dev-shm-usage',
+                '--disable-setuid-sandbox',
+                '--no-first-run',
+                '--no-sandbox',
+                '--no-zygote',
+                '--single-process',
+                '--ignore-certificate-errors',
+                '--ignore-certificate-errors-spki-list',
+                '--enable-features=NetworkService'],
         prefs: {
           "download.directory_upgrade": true,
           "download.prompt_for_download": false,
