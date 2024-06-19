@@ -30,7 +30,7 @@ import { GetSecretClient, getSecret } from "../../utils/LoginConf.js";
 import { AddNewApprovedPersonQuestions } from "../../utils/types/Regulator.types.js";
 
 const basePage = new BasePage();
-
+let mainPageWindowHandle:string;
 Given(/^init common scenario context/, async function (this: CustomWorld) {
 
   const keyVaultUrl = process.argv[process.argv.indexOf("-secrets") + 1];
@@ -562,6 +562,7 @@ Then(
   }
 );
 
+
 Then(
   /^the user should be on the "(.*)" page in new Tab$/,
   async function (pageName: string) {
@@ -570,12 +571,26 @@ Then(
     if (!pageElem) {
       throw new Error(`The page ${pageName} is not defined!`);
     }
-
+    mainPageWindowHandle = (await browser.getWindowHandle()).toString();
     await browser.switchWindow(pageElem)
     await expect(browser).toHaveUrlContaining(pageElem);
     await CommonPage.takeScreenshot();
   }
 );
+
+Then(
+  /^the user closes the "(.*)" page and returns to main page$/,
+  async function (pageName: string) {
+    await waitUntilPageLoads();
+    const pageElem = Pages[pageName];
+    if (!pageElem) {
+      throw new Error(`The page ${pageName} is not defined!`);
+    }
+    await browser.switchToWindow(mainPageWindowHandle);
+    await CommonPage.takeScreenshot();
+  }
+);
+
 
 Then(
   /^the page title should be correct for the "(.*)" page$/,
@@ -787,24 +802,109 @@ When(
     }
 );
 
-Then(/^the user should see "Get help" details in the "(.*)" footer$/,async function(context) {
+Then(
+  /^the user clicks on the "(Cookies|Privacy|Accessibility|Accessibility statement)" link in the footer$/,
+  async function (
+    this: CustomWorld,
+    btnName: "Cookies" | "Privacy" | "Accessibility" |"Accessibility statement"
+  ) {
+    if (!this.isWelsh) {
+      switch (btnName) {
+        case "Cookies":
+          await expect(
+            await basePage.cookiesLnk
+          ).toBeDisplayed();
+          await waitAndClick(await basePage.cookiesLnk);
+          break;
+        case "Privacy":
+          await expect(
+            await basePage.privacyLnk
+          ).toBeDisplayed();
+          await waitAndClick(await basePage.privacyLnk);
+          break;
+        case "Accessibility statement":
+        case "Accessibility":
+          await expect(
+            await basePage.accessibilityStatementLink
+          ).toBeDisplayed();
+          await waitAndClick(await basePage.accessibilityStatementLink);
+          break;
+        default:
+          throw new Error(`The ${btnName} button is not defined!`);
+      }
+    } else {
+      switch (btnName) {
+        case "Cookies":
+          await expect(
+            await basePage.cookiesLinkWelsh
+          ).toBeDisplayed();
+          await waitAndClick(await basePage.cookiesLinkWelsh);
+          break;
+        case "Privacy":
+          await expect(
+            await basePage.privacyLnkWelsh
+          ).toBeDisplayed();
+          await waitAndClick(await basePage.privacyLnkWelsh);
+          break;
+        case "Accessibility statement":
+        case "Accessibility":
+          await expect(
+            await basePage.accessibilityStatementLinkWelsh
+          ).toBeDisplayed();
+          await waitAndClick(await basePage.accessibilityStatementLinkWelsh);
+          break;
+        default:
+          throw new Error(`The ${btnName} button is not defined!`);
+      }
+    }
+  }
+);
 
-//check "Get help" header  
-await expect(basePage.getHelpHeader).toBeDisplayed()
-await expect(basePage.getHelpHeader).toHaveText('Get help')
+Then(
+  /^the user should see "Get help" details in the "(.*)" footer$/,
+  async function (this: CustomWorld, context) {
+    const tag =
+      context.includes("create account") || context.includes("regulators home")
+        ? "li"
+        : "p";
+    if (!this.isWelsh) {
+      //check "Get help" header
+      await expect(basePage.getHelpHeader).toBeDisplayed();
+      await expect(basePage.getHelpHeader).toHaveText("Get help");
 
-// check email Link
-await expect(basePage.emailLink).toBeDisplayed();
-await expect(basePage.emailLink).toHaveText('eprcustomerservice@defra.gov.uk')
+      // check email
+      await expect(basePage.email(tag)).toHaveText("Email: eprcustomerservice@defra.gov.uk");
+      await expect(basePage.emailLink).toBeDisplayed();
+  
+      // check phone number
+      await expect(basePage.phoneNumber(tag)).toBeDisplayed();
+      await expect(basePage.phoneNumber(tag)).toHaveText(
+        "Telephone: 0300 060 0002"
+      );
 
-// check phone number
+      // check opening times
+      await expect(basePage.openingTimes(tag)).toBeDisplayed();
+      await expect(basePage.openingTimes(tag)).toHaveText(
+        "Monday to Friday, 8:30am to 4:30pm"
+      );
+    } else {
+      await expect(basePage.getHelpHeader).toBeDisplayed();
+      await expect(basePage.getHelpHeader).toHaveText("Cael help");
 
-const tag = context.includes('create account') ||  context.includes('regulators home') ?'li' : 'p'
-  await expect(basePage.phoneNumber(tag)).toBeDisplayed();
-  await expect(basePage.phoneNumber(tag)).toHaveText('Telephone: 0300 060 0002')
+      // check email
+      await expect(basePage.emailWelsh(tag)).toHaveText("Ebost: eprcustomerservice@defra.gov.uk");
+      await expect(basePage.emailLink).toBeDisplayed();
 
-// check opening times
+      await expect(basePage.phoneNumberWelsh(tag)).toBeDisplayed();
+      await expect(basePage.phoneNumberWelsh(tag)).toHaveText(
+        "Ffôn: 0300 060 0002"
+      );
 
-await expect(basePage.openingTimes(tag)).toBeDisplayed();
-await expect(basePage.openingTimes(tag)).toHaveText('Monday to Friday, 8:30am to 4:30pm')
-})
+      // check opening times
+      await expect(basePage.openingTimesWelsh(tag)).toBeDisplayed();
+      await expect(basePage.openingTimesWelsh(tag)).toHaveText(
+        "Dydd Llun i ddydd Gwener, 8:30am i 4:30pm"
+      );
+    }
+  }
+);

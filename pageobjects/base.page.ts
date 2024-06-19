@@ -11,6 +11,26 @@ export default class BasePage {
     return $("*=Cymraeg");
   }
 
+  get cookiesLnk() {
+    return $("=Cookies");
+  }
+
+  get cookiesLinkWelsh() {
+    return $("=Cwcis");
+  }
+
+  get privacyLnk() {
+    return $("=Privacy");
+  }
+
+  get privacyLnkWelsh() {
+    return $("=Preifatrwydd");
+  }
+
+  get accessibilityStatementLinkWelsh() {
+    return $("=Datganiad hygyrchedd");
+  }
+
   get footer() {
     return $("footer div.govuk-footer__meta-item--grow");
   }
@@ -22,6 +42,10 @@ export default class BasePage {
   get emailLink() {
     return this.footer.$('a[href*="mailto"]');
   }
+
+  email(tag:string) {
+    return this.footer.$(`${tag}*=Email`);
+  }
   
    phoneNumber(tag:string) {
     return this.footer.$(`${tag}*=Telephone`)
@@ -29,6 +53,18 @@ export default class BasePage {
 
    openingTimes(tag:string) {
     return this.footer.$(`${tag}*=Monday to Friday`);
+  }
+
+  emailWelsh(tag:string) {
+    return this.footer.$(`${tag}*=Ebost`);
+  }
+
+  phoneNumberWelsh(tag:string) {
+    return this.footer.$(`${tag}*=Ffôn`)
+  }
+
+   openingTimesWelsh(tag:string) {
+    return this.footer.$(`${tag}*=Dydd Llun i ddydd Gwener`);
   }
 
   get lnkPrivacyPolicy() {
