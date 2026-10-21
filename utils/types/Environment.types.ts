@@ -3,7 +3,6 @@ export type Environment =
   | "dev2"
   | "dev3"
   | "dev4"
-  | "dev6"
   | "dev7"
   | "dev8"
   | "tst1";
